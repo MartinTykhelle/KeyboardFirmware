@@ -1,0 +1,1211 @@
+{
+  "sources": ["https://docs.qmk.fm/keycodes", "https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/keycode.py", "https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/consumer_control_code.py"],
+  "keys": [
+    {
+      "qmk": "KC_NO",
+      "qmkAliases": ["XXXXXXX"],
+      "desc": "No Operation",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_TRANSPARENT",
+      "qmkAliases": ["KC_TRNS", "_______"],
+      "desc": "Transparent (Use lower level)",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_A",
+      "qmkAliases": [""],
+      "desc": "Letter A",
+      "usbHidCode": "0x04"
+    },
+    {
+      "qmk": "KC_B",
+      "qmkAliases": [""],
+      "desc": "Letter B",
+      "usbHidCode": "0x05"
+    },
+    {
+      "qmk": "KC_C",
+      "qmkAliases": [""],
+      "desc": "Letter C",
+      "usbHidCode": "0x06"
+    },
+    {
+      "qmk": "KC_D",
+      "qmkAliases": [""],
+      "desc": "Letter D",
+      "usbHidCode": "0x07"
+    },
+    {
+      "qmk": "KC_E",
+      "qmkAliases": [""],
+      "desc": "Letter E",
+      "usbHidCode": "0x08"
+    },
+    {
+      "qmk": "KC_F",
+      "qmkAliases": [""],
+      "desc": "Letter F",
+      "usbHidCode": "0x09"
+    },
+    {
+      "qmk": "KC_G",
+      "qmkAliases": [""],
+      "desc": "Letter G",
+      "usbHidCode": "0x0a"
+    },
+    {
+      "qmk": "KC_H",
+      "qmkAliases": [""],
+      "desc": "Letter H",
+      "usbHidCode": "0x0b"
+    },
+    {
+      "qmk": "KC_I",
+      "qmkAliases": [""],
+      "desc": "Letter I",
+      "usbHidCode": "0x0c"
+    },
+    {
+      "qmk": "KC_J",
+      "qmkAliases": [""],
+      "desc": "Letter J",
+      "usbHidCode": "0x0d"
+    },
+    {
+      "qmk": "KC_K",
+      "qmkAliases": [""],
+      "desc": "Letter K",
+      "usbHidCode": "0x0e"
+    },
+    {
+      "qmk": "KC_L",
+      "qmkAliases": [""],
+      "desc": "Letter L",
+      "usbHidCode": "0x0f"
+    },
+    {
+      "qmk": "KC_M",
+      "qmkAliases": [""],
+      "desc": "Letter M",
+      "usbHidCode": "0x10"
+    },
+    {
+      "qmk": "KC_N",
+      "qmkAliases": [""],
+      "desc": "Letter N",
+      "usbHidCode": "0x11"
+    },
+    {
+      "qmk": "KC_O",
+      "qmkAliases": [""],
+      "desc": "Letter O",
+      "usbHidCode": "0x12"
+    },
+    {
+      "qmk": "KC_P",
+      "qmkAliases": [""],
+      "desc": "Letter P",
+      "usbHidCode": "0x13"
+    },
+    {
+      "qmk": "KC_Q",
+      "qmkAliases": [""],
+      "desc": "Letter Q",
+      "usbHidCode": "0x14"
+    },
+    {
+      "qmk": "KC_R",
+      "qmkAliases": [""],
+      "desc": "Letter R",
+      "usbHidCode": "0x15"
+    },
+    {
+      "qmk": "KC_S",
+      "qmkAliases": [""],
+      "desc": "Letter S",
+      "usbHidCode": "0x16"
+    },
+    {
+      "qmk": "KC_T",
+      "qmkAliases": [""],
+      "desc": "Letter T",
+      "usbHidCode": "0x17"
+    },
+    {
+      "qmk": "KC_U",
+      "qmkAliases": [""],
+      "desc": "Letter U",
+      "usbHidCode": "0x18"
+    },
+    {
+      "qmk": "KC_V",
+      "qmkAliases": [""],
+      "desc": "Letter V",
+      "usbHidCode": "0x19"
+    },
+    {
+      "qmk": "KC_W",
+      "qmkAliases": [""],
+      "desc": "Letter W",
+      "usbHidCode": "0x1a"
+    },
+    {
+      "qmk": "KC_X",
+      "qmkAliases": [""],
+      "desc": "Letter X",
+      "usbHidCode": "0x1b"
+    },
+    {
+      "qmk": "KC_Y",
+      "qmkAliases": [""],
+      "desc": "Letter Y",
+      "usbHidCode": "0x1c"
+    },
+    {
+      "qmk": "KC_Z",
+      "qmkAliases": [""],
+      "desc": "Letter Z",
+      "usbHidCode": "0x1d"
+    },
+    {
+      "qmk": "KC_1",
+      "qmkAliases": [""],
+      "desc": "Number 1",
+      "usbHidCode": "0x1e"
+    },
+    {
+      "qmk": "KC_2",
+      "qmkAliases": [""],
+      "desc": "Number 2",
+      "usbHidCode": "0x1f"
+    },
+    {
+      "qmk": "KC_3",
+      "qmkAliases": [""],
+      "desc": "Number 3",
+      "usbHidCode": "0x20"
+    },
+    {
+      "qmk": "KC_4",
+      "qmkAliases": [""],
+      "desc": "Number 4",
+      "usbHidCode": "0x21"
+    },
+    {
+      "qmk": "KC_5",
+      "qmkAliases": [""],
+      "desc": "Number 5",
+      "usbHidCode": "0x22"
+    },
+    {
+      "qmk": "KC_6",
+      "qmkAliases": [""],
+      "desc": "Number 6",
+      "usbHidCode": "0x23"
+    },
+    {
+      "qmk": "KC_7",
+      "qmkAliases": [""],
+      "desc": "Number 7",
+      "usbHidCode": "0x24"
+    },
+    {
+      "qmk": "KC_8",
+      "qmkAliases": [""],
+      "desc": "Number 8",
+      "usbHidCode": "0x25"
+    },
+    {
+      "qmk": "KC_9",
+      "qmkAliases": [""],
+      "desc": "Number 9",
+      "usbHidCode": "0x26"
+    },
+    {
+      "qmk": "KC_0",
+      "qmkAliases": [""],
+      "desc": "Number 0",
+      "usbHidCode": "0x27"
+    },
+    {
+      "qmk": "KC_ENTER",
+      "qmkAliases": ["KC_ENT"],
+      "desc": "Enter",
+      "usbHidCode": "0x28"
+    },
+    {
+      "qmk": "KC_ESCAPE",
+      "qmkAliases": ["KC_ESC"],
+      "desc": "Escape",
+      "usbHidCode": "0x29"
+    },
+    {
+      "qmk": "KC_BACKSPACE",
+      "qmkAliases": ["KC_BSPC"],
+      "desc": "Backspace",
+      "usbHidCode": "0x2a"
+    },
+    {
+      "qmk": "KC_TAB",
+      "qmkAliases": [""],
+      "desc": "Tab",
+      "usbHidCode": "0x2b"
+    },
+    {
+      "qmk": "KC_SPACE",
+      "qmkAliases": ["KC_SPC"],
+      "desc": "Spacebar",
+      "usbHidCode": "0x2c"
+    },
+    {
+      "qmk": "KC_MINUS",
+      "qmkAliases": ["KC_MINS"],
+      "desc": "Minus",
+      "usbHidCode": "0x2D"
+    },
+    {
+      "qmk": "KC_EQUAL",
+      "qmkAliases": ["KC_EQL"],
+      "desc": "Equal sign",
+      "usbHidCode": "0x2E"
+    },
+    {
+      "qmk": "KC_LEFT_BRACKET",
+      "qmkAliases": ["KC_LBRC"],
+      "desc": "Left bracket",
+      "usbHidCode": "0x2F"
+    },
+    {
+      "qmk": "KC_RIGHT_BRACKET",
+      "qmkAliases": ["KC_RBRC"],
+      "desc": "Right bracket",
+      "usbHidCode": "0x30"
+    },
+    {
+      "qmk": "KC_BACKSLASH",
+      "qmkAliases": ["KC_BSLS"],
+      "desc": "Backslash",
+      "usbHidCode": "0x31"
+    },
+    {
+      "qmk": "KC_NONUS_HASH",
+      "qmkAliases": ["KC_NUHS"],
+      "desc": "Non-us hash sign",
+      "usbHidCode": "0x32"
+    },
+    {
+      "qmk": "KC_SEMICOLON",
+      "qmkAliases": ["KC_SCLN"],
+      "desc": "Semicolon",
+      "usbHidCode": "0x33"
+    },
+    {
+      "qmk": "KC_QUOTE",
+      "qmkAliases": ["KC_QUOT"],
+      "desc": "Quote",
+      "usbHidCode": "0x34"
+    },
+    {
+      "qmk": "KC_GRAVE",
+      "qmkAliases": ["KC_GRV"],
+      "desc": "Grave",
+      "usbHidCode": "0x35"
+    },
+    {
+      "qmk": "KC_COMMA",
+      "qmkAliases": ["KC_COMM"],
+      "desc": "Comma",
+      "usbHidCode": "0x36"
+    },
+    {
+      "qmk": "KC_DOT",
+      "qmkAliases": [""],
+      "desc": "Dot",
+      "usbHidCode": "0x37"
+    },
+    {
+      "qmk": "KC_SLASH",
+      "qmkAliases": ["KC_SLSH"],
+      "desc": "Slash",
+      "usbHidCode": "0x38"
+    },
+    {
+      "qmk": "KC_CAPS_LOCK",
+      "qmkAliases": ["KC_CAPS"],
+      "desc": "Caps lock",
+      "usbHidCode": "0x39"
+    },
+    {
+      "qmk": "KC_F1",
+      "qmkAliases": [""],
+      "desc": "F1",
+      "usbHidCode": "0x3A"
+    },
+    {
+      "qmk": "KC_F2",
+      "qmkAliases": [""],
+      "desc": "F2",
+      "usbHidCode": "0x3B"
+    },
+    {
+      "qmk": "KC_F3",
+      "qmkAliases": [""],
+      "desc": "F3",
+      "usbHidCode": "0x3C"
+    },
+    {
+      "qmk": "KC_F4",
+      "qmkAliases": [""],
+      "desc": "F4",
+      "usbHidCode": "0x3D"
+    },
+    {
+      "qmk": "KC_F5",
+      "qmkAliases": [""],
+      "desc": "F5",
+      "usbHidCode": "0x3E"
+    },
+    {
+      "qmk": "KC_F6",
+      "qmkAliases": [""],
+      "desc": "F6",
+      "usbHidCode": "0x3F"
+    },
+    {
+      "qmk": "KC_F7",
+      "qmkAliases": [""],
+      "desc": "F7",
+      "usbHidCode": "0x40"
+    },
+    {
+      "qmk": "KC_F8",
+      "qmkAliases": [""],
+      "desc": "F8",
+      "usbHidCode": "0x41"
+    },
+    {
+      "qmk": "KC_F9",
+      "qmkAliases": [""],
+      "desc": "F9",
+      "usbHidCode": "0x42"
+    },
+    {
+      "qmk": "KC_F10",
+      "qmkAliases": [""],
+      "desc": "F10",
+      "usbHidCode": "0x43"
+    },
+    {
+      "qmk": "KC_F11",
+      "qmkAliases": [""],
+      "desc": "F11",
+      "usbHidCode": "0x44"
+    },
+    {
+      "qmk": "KC_F12",
+      "qmkAliases": [""],
+      "desc": "F12",
+      "usbHidCode": "0x45"
+    },
+    {
+      "qmk": "KC_PRINT_SCREEN",
+      "qmkAliases": ["KC_PSCR"],
+      "desc": "Print screen",
+      "usbHidCode": "0x46"
+    },
+    {
+      "qmk": "KC_SCROLL_LOCK",
+      "qmkAliases": ["KC_SCRL", "KC_BRMD"],
+      "desc": "Scroll Lock",
+      "usbHidCode": "0x47"
+    },
+    {
+      "qmk": "KC_PAUSE",
+      "qmkAliases": ["KC_PAUS", "KC_BRK", "KC_BRMU"],
+      "desc": "Pause/Break",
+      "usbHidCode": "0x48"
+    },
+    {
+      "qmk": "KC_INSERT",
+      "qmkAliases": ["KC_INS"],
+      "desc": "Insert",
+      "usbHidCode": "0x49"
+    },
+    {
+      "qmk": "KC_HOME",
+      "qmkAliases": [""],
+      "desc": "Home",
+      "usbHidCode": "0x4A"
+    },
+    {
+      "qmk": "KC_PAGE_UP",
+      "qmkAliases": ["KC_PGUP"],
+      "desc": "Page Up",
+      "usbHidCode": "0x4B"
+    },
+    {
+      "qmk": "KC_DELETE",
+      "qmkAliases": ["KC_DEL"],
+      "desc": "Delete",
+      "usbHidCode": "0x4C"
+    },
+    {
+      "qmk": "KC_END",
+      "qmkAliases": [""],
+      "desc": "End",
+      "usbHidCode": "0x4D"
+    },
+    {
+      "qmk": "KC_PAGE_DOWN",
+      "qmkAliases": ["KC_PGDN"],
+      "desc": "Page Down",
+      "usbHidCode": "0x4E"
+    },
+    {
+      "qmk": "KC_RIGHT",
+      "qmkAliases": ["KC_RGHT"],
+      "desc": "Arrow Right",
+      "usbHidCode": "0x4F"
+    },
+    {
+      "qmk": "KC_LEFT",
+      "qmkAliases": [""],
+      "desc": "Arrow Left",
+      "usbHidCode": "0x50"
+    },
+    {
+      "qmk": "KC_DOWN",
+      "qmkAliases": [""],
+      "desc": "Arrow Down",
+      "usbHidCode": "0x51"
+    },
+    {
+      "qmk": "KC_UP",
+      "qmkAliases": [""],
+      "desc": "Arrow Up",
+      "usbHidCode": "0x52"
+    },
+    {
+      "qmk": "KC_NUM_LOCK",
+      "qmkAliases": ["KC_NUM"],
+      "desc": "Keypad Num lock",
+      "usbHidCode": "0x53"
+    },
+    {
+      "qmk": "KC_KP_SLASH",
+      "qmkAliases": ["KC_PSLS"],
+      "desc": "Keypad Slash",
+      "usbHidCode": "0x54"
+    },
+    {
+      "qmk": "KC_KP_ASTERISK",
+      "qmkAliases": ["KC_PAST"],
+      "desc": "Keypad Asterisk",
+      "usbHidCode": "0x55"
+    },
+    {
+      "qmk": "KC_KP_MINUS",
+      "qmkAliases": ["KC_PMNS"],
+      "desc": "Keypad Minus",
+      "usbHidCode": "0x56"
+    },
+    {
+      "qmk": "KC_KP_PLUS",
+      "qmkAliases": ["KC_PPLS"],
+      "desc": "Keypad Plus",
+      "usbHidCode": "0x57"
+    },
+    {
+      "qmk": "KC_KP_ENTER",
+      "qmkAliases": ["KC_PENT"],
+      "desc": "Keypad Enter",
+      "usbHidCode": "0x58"
+    },
+    {
+      "qmk": "KC_KP_1",
+      "qmkAliases": ["KC_P1"],
+      "desc": "Keypad 1",
+      "usbHidCode": "0x59"
+    },
+    {
+      "qmk": "KC_KP_2",
+      "qmkAliases": ["KC_P2"],
+      "desc": "Keypad 2",
+      "usbHidCode": "0x5A"
+    },
+    {
+      "qmk": "KC_KP_3",
+      "qmkAliases": ["KC_P3"],
+      "desc": "Keypad 3",
+      "usbHidCode": "0x5B"
+    },
+    {
+      "qmk": "KC_KP_4",
+      "qmkAliases": ["KC_P4"],
+      "desc": "Keypad 4",
+      "usbHidCode": "0x5C"
+    },
+    {
+      "qmk": "KC_KP_5",
+      "qmkAliases": ["KC_P5"],
+      "desc": "Keypad 5",
+      "usbHidCode": "0x5D"
+    },
+    {
+      "qmk": "KC_KP_6",
+      "qmkAliases": ["KC_P6"],
+      "desc": "Keypad 6",
+      "usbHidCode": "0x5E"
+    },
+    {
+      "qmk": "KC_KP_7",
+      "qmkAliases": ["KC_P7"],
+      "desc": "Keypad 7",
+      "usbHidCode": "0x5F"
+    },
+    {
+      "qmk": "KC_KP_8",
+      "qmkAliases": ["KC_P8"],
+      "desc": "Keypad 8",
+      "usbHidCode": "0x60"
+    },
+    {
+      "qmk": "KC_KP_9",
+      "qmkAliases": ["KC_P9"],
+      "desc": "Keypad 9",
+      "usbHidCode": "0x61"
+    },
+    {
+      "qmk": "KC_KP_0",
+      "qmkAliases": ["KC_P0"],
+      "desc": "Keypad 0",
+      "usbHidCode": "0x62"
+    },
+    {
+      "qmk": "KC_KP_DOT",
+      "qmkAliases": ["KC_PDOT"],
+      "desc": "Keypad Dot",
+      "usbHidCode": "0x63"
+    },
+    {
+      "qmk": "KC_NONUS_BACKSLASH",
+      "qmkAliases": ["KC_NUBS"],
+      "desc": "Non-us backslash",
+      "usbHidCode": "0x64"
+    },
+    {
+      "qmk": "KC_APPLICATION",
+      "qmkAliases": ["KC_APP"],
+      "desc": "Application (Context menu)",
+      "usbHidCode": "0x65"
+    },
+    {
+      "qmk": "KC_KB_POWER",
+      "qmkAliases": [""],
+      "desc": "System power",
+      "usbHidCode": "0x66"
+    },
+    {
+      "qmk": "KC_KP_EQUAL",
+      "qmkAliases": ["KC_PEQL"],
+      "desc": "Keypad Equal",
+      "usbHidCode": "0x67"
+    },
+    {
+      "qmk": "KC_F13",
+      "qmkAliases": [""],
+      "desc": "F13",
+      "usbHidCode": "0x68"
+    },
+    {
+      "qmk": "KC_F14",
+      "qmkAliases": [""],
+      "desc": "F14",
+      "usbHidCode": "0x69"
+    },
+    {
+      "qmk": "KC_F15",
+      "qmkAliases": [""],
+      "desc": "F15",
+      "usbHidCode": "0x6A"
+    },
+    {
+      "qmk": "KC_F16",
+      "qmkAliases": [""],
+      "desc": "F16",
+      "usbHidCode": "0x6B"
+    },
+    {
+      "qmk": "KC_F17",
+      "qmkAliases": [""],
+      "desc": "F17",
+      "usbHidCode": "0x6C"
+    },
+    {
+      "qmk": "KC_F18",
+      "qmkAliases": [""],
+      "desc": "F18",
+      "usbHidCode": "0x6D"
+    },
+    {
+      "qmk": "KC_F19",
+      "qmkAliases": [""],
+      "desc": "F19",
+      "usbHidCode": "0x6E"
+    },
+    {
+      "qmk": "KC_F20",
+      "qmkAliases": [""],
+      "desc": "F20",
+      "usbHidCode": "0x6F"
+    },
+    {
+      "qmk": "KC_F21",
+      "qmkAliases": [""],
+      "desc": "F21",
+      "usbHidCode": "0x70"
+    },
+    {
+      "qmk": "KC_F22",
+      "qmkAliases": [""],
+      "desc": "F22",
+      "usbHidCode": "0x71"
+    },
+    {
+      "qmk": "KC_F23",
+      "qmkAliases": [""],
+      "desc": "F23",
+      "usbHidCode": "0x72"
+    },
+    {
+      "qmk": "KC_F24",
+      "qmkAliases": [""],
+      "desc": "F24",
+      "usbHidCode": "0x73"
+    },
+    {
+      "qmk": "KC_EXECUTE",
+      "qmkAliases": ["KC_EXEC"],
+      "desc": "Execute",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_HELP",
+      "qmkAliases": [""],
+      "desc": "Help",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MENU",
+      "qmkAliases": [""],
+      "desc": "Menu",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_SELECT",
+      "qmkAliases": ["KC_SLCT"],
+      "desc": "Select",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_STOP",
+      "qmkAliases": [""],
+      "desc": "Stop",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_AGAIN",
+      "qmkAliases": ["KC_AGIN"],
+      "desc": "Again",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_UNDO",
+      "qmkAliases": [""],
+      "desc": "Undo",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_CUT",
+      "qmkAliases": [""],
+      "desc": "Cut",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_COPY",
+      "qmkAliases": [""],
+      "desc": "Copy",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_PASTE",
+      "qmkAliases": ["KC_PSTE"],
+      "desc": "Paste",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_FIND",
+      "qmkAliases": [""],
+      "desc": "FIND",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_KB_MUTE",
+      "qmkAliases": [""],
+      "desc": "Mute",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_KB_VOLUME_UP",
+      "qmkAliases": [""],
+      "desc": "Volume Up",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_KB_VOLUME_DOWN",
+      "qmkAliases": [""],
+      "desc": "Volume Down",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LOCKING_CAPS_LOCK",
+      "qmkAliases": ["KC_LCAP"],
+      "desc": "Locking Caps Lock",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LOCKING_NUM_LOCK",
+      "qmkAliases": ["KC_LNUM"],
+      "desc": "Locking Num Lock",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LOCKING_SCROLL_LOCK",
+      "qmkAliases": ["KC_LSCR"],
+      "desc": "Locking Scroll Lock",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_KP_COMMA",
+      "qmkAliases": ["KC_PCMM"],
+      "desc": "Keypad Comma",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_KP_EQUAL_AS400",
+      "qmkAliases": [""],
+      "desc": "AS400 Equal sign",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_1",
+      "qmkAliases": ["KC_INT1"],
+      "desc": "International 1",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_2",
+      "qmkAliases": ["KC_INT2"],
+      "desc": "International 2",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_3",
+      "qmkAliases": ["KC_INT3"],
+      "desc": "International 3",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_4",
+      "qmkAliases": ["KC_INT4"],
+      "desc": "International 4",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_5",
+      "qmkAliases": ["KC_INT5"],
+      "desc": "International 5",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_6",
+      "qmkAliases": ["KC_INT6"],
+      "desc": "International 6",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_7",
+      "qmkAliases": ["KC_INT7"],
+      "desc": "International 7",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_8",
+      "qmkAliases": ["KC_INT8"],
+      "desc": "International 8",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_INTERNATIONAL_9",
+      "qmkAliases": ["KC_INT9"],
+      "desc": "International 9",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_1",
+      "qmkAliases": ["KC_LNG1"],
+      "desc": "Language 1",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_2",
+      "qmkAliases": ["KC_LNG2"],
+      "desc": "Language 2",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_3",
+      "qmkAliases": ["KC_LNG3"],
+      "desc": "Language 3",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_4",
+      "qmkAliases": ["KC_LNG4"],
+      "desc": "Language 4",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_5",
+      "qmkAliases": ["KC_LNG5"],
+      "desc": "Language 5",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_6",
+      "qmkAliases": ["KC_LNG6"],
+      "desc": "Language 6",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_7",
+      "qmkAliases": ["KC_LNG7"],
+      "desc": "Language 7",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_8",
+      "qmkAliases": ["KC_LNG8"],
+      "desc": "Language 8",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LANGUAGE_9",
+      "qmkAliases": ["KC_LNG9"],
+      "desc": "Language 9",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_ALTERNATE_ERASE",
+      "qmkAliases": ["KC_ERAS"],
+      "desc": "Alternative Erase",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_SYSTEM_REQUEST",
+      "qmkAliases": ["KC_SYRQ"],
+      "desc": "System Request",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_CANCEL",
+      "qmkAliases": ["KC_CNCL"],
+      "desc": "Cancel",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_CLEAR",
+      "qmkAliases": ["KC_CLR"],
+      "desc": "Clear",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_PRIOR",
+      "qmkAliases": ["KC_PRIR"],
+      "desc": "Prior",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_RETURN",
+      "qmkAliases": ["KC_RETN"],
+      "desc": "Return",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_SEPARATOR",
+      "qmkAliases": ["KC_SEPR"],
+      "desc": "Separator",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_OUT",
+      "qmkAliases": [""],
+      "desc": "Out",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_OPER",
+      "qmkAliases": [""],
+      "desc": "Oper",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_CLEAR_AGAIN",
+      "qmkAliases": ["KC_CLAG"],
+      "desc": "Clear again",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_CRSEL",
+      "qmkAliases": ["KC_CRSL"],
+      "desc": "Clear Selected",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_EXSEL",
+      "qmkAliases": ["KC_EXSL"],
+      "desc": "Exsel",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LEFT_CTRL",
+      "qmkAliases": ["KC_LCTL"],
+      "desc": "Left Ctrl",
+      "usbHidCode": "0xE0"
+    },
+    {
+      "qmk": "KC_LEFT_SHIFT",
+      "qmkAliases": ["KC_LSFT"],
+      "desc": "Left Shift",
+      "usbHidCode": "0xE1"
+    },
+    {
+      "qmk": "KC_LEFT_ALT",
+      "qmkAliases": ["KC_LALT", "KC_LOPT"],
+      "desc": "Left Alt",
+      "usbHidCode": "0xE2"
+    },
+    {
+      "qmk": "KC_LEFT_GUI",
+      "qmkAliases": ["KC_LGUI", "KC_LCMD", "KC_LWIN"],
+      "desc": "Left GUI",
+      "usbHidCode": "0xE3"
+    },
+    {
+      "qmk": "KC_RIGHT_CTRL",
+      "qmkAliases": ["KC_RCTL"],
+      "desc": "Right Ctrl",
+      "usbHidCode": "0xE4"
+    },
+    {
+      "qmk": "KC_RIGHT_SHIFT",
+      "qmkAliases": ["KC_RSFT"],
+      "desc": "Right Shift",
+      "usbHidCode": "0xE5"
+    },
+    {
+      "qmk": "KC_RIGHT_ALT",
+      "qmkAliases": ["KC_RALT", "KC_ROPT", "KC_ALGR"],
+      "desc": "Right Alt",
+      "usbHidCode": "0xE6"
+    },
+    {
+      "qmk": "KC_RIGHT_GUI",
+      "qmkAliases": ["KC_RGUI", "KC_RCMD", "KC_RWIN"],
+      "desc": "Right GUI",
+      "usbHidCode": "0xE7"
+    },
+    {
+      "qmk": "KC_SYSTEM_POWER",
+      "qmkAliases": ["KC_PWR"],
+      "desc": "System Power",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_SYSTEM_SLEEP",
+      "qmkAliases": ["KC_SLEP"],
+      "desc": "System Sleep",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_SYSTEM_WAKE",
+      "qmkAliases": ["KC_WAKE"],
+      "desc": "System Wake",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_AUDIO_MUTE",
+      "qmkAliases": ["KC_MUTE"],
+      "desc": "Audio Mute",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_AUDIO_VOL_UP",
+      "qmkAliases": ["KC_VOLU"],
+      "desc": "Volume Up",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_AUDIO_VOL_DOWN",
+      "qmkAliases": ["KC_VOLD"],
+      "desc": "Volume Down",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MEDIA_NEXT_TRACK",
+      "qmkAliases": ["KC_MNXT"],
+      "desc": "Next track",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MEDIA_PREV_TRACK",
+      "qmkAliases": ["KC_MPRV"],
+      "desc": "Previous Track",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MEDIA_STOP",
+      "qmkAliases": ["KC_MSTP"],
+      "desc": "Media Stop",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MEDIA_PLAY_PAUSE",
+      "qmkAliases": ["KC_MPLY"],
+      "desc": "Play/Pause",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MEDIA_SELECT",
+      "qmkAliases": ["KC_MSEL"],
+      "desc": "Media Select",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MEDIA_EJECT",
+      "qmkAliases": ["KC_EJCT"],
+      "desc": "Media Eject",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MAIL",
+      "qmkAliases": [""],
+      "desc": "Mail",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_CALCULATOR",
+      "qmkAliases": ["KC_CALC"],
+      "desc": "Calculator",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MY_COMPUTER",
+      "qmkAliases": ["KC_MYCM"],
+      "desc": "My Computer",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_WWW_SEARCH",
+      "qmkAliases": ["KC_WSCH"],
+      "desc": "WWW Search",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_WWW_HOME",
+      "qmkAliases": ["KC_WHOM"],
+      "desc": "WWW Home",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_WWW_BACK",
+      "qmkAliases": ["KC_WBAK"],
+      "desc": "WWW Back",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_WWW_FORWARD",
+      "qmkAliases": ["KC_WFWD"],
+      "desc": "WWW Forward",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_WWW_STOP",
+      "qmkAliases": ["KC_WSTP"],
+      "desc": "WWW Stop",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_WWW_REFRESH",
+      "qmkAliases": ["KC_WREF"],
+      "desc": "WWW Refresh",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_WWW_FAVORITES",
+      "qmkAliases": ["KC_WFAV"],
+      "desc": "WWW Favorites",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MEDIA_FAST_FORWARD",
+      "qmkAliases": ["KC_MFFD"],
+      "desc": "Media Fast Forward",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MEDIA_REWIND",
+      "qmkAliases": ["KC_MRWD"],
+      "desc": "Media Rewind",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_BRIGHTNESS_UP",
+      "qmkAliases": ["KC_BRIU"],
+      "desc": "Brightness Up",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_BRIGHTNESS_DOWN",
+      "qmkAliases": ["KC_BRID"],
+      "desc": "Brightness Down",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_CONTROL_PANEL",
+      "qmkAliases": ["KC_CPNL"],
+      "desc": "Control Panel",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_ASSISTANT",
+      "qmkAliases": ["KC_ASST"],
+      "desc": "Assistant",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_MISSION_CONTROL",
+      "qmkAliases": ["KC_MCTL"],
+      "desc": "Mission Control",
+      "usbHidCode": ""
+    },
+    {
+      "qmk": "KC_LAUNCHPAD",
+      "qmkAliases": ["KC_LPAD"],
+      "desc": "Launchpad",
+      "usbHidCode": ""
+    }
+  ]
+}
