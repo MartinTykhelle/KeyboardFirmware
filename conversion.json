@@ -1,1211 +1,2330 @@
 {
-  "sources": ["https://docs.qmk.fm/keycodes", "https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/keycode.py", "https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/consumer_control_code.py"],
   "keys": [
     {
+      "desc": "No Operation",
       "qmk": "KC_NO",
       "qmkAliases": ["XXXXXXX"],
-      "desc": "No Operation",
       "usbHidCode": ""
     },
     {
+      "desc": "Transparent (Use lower level)",
       "qmk": "KC_TRANSPARENT",
       "qmkAliases": ["KC_TRNS", "_______"],
-      "desc": "Transparent (Use lower level)",
       "usbHidCode": ""
     },
     {
+      "desc": "Letter A",
+      "js": {
+        "none": {
+          "code": "KeyA",
+          "key": "a",
+          "keyCode": 65
+        },
+        "shift": {
+          "code": "KeyA",
+          "key": "A",
+          "keyCode": 65
+        }
+      },
       "qmk": "KC_A",
       "qmkAliases": [""],
-      "desc": "Letter A",
       "usbHidCode": "0x04"
     },
     {
+      "desc": "Letter B",
+      "js": {
+        "none": {
+          "code": "KeyB",
+          "key": "b",
+          "keyCode": 66
+        },
+        "shift": {
+          "code": "KeyB",
+          "key": "B",
+          "keyCode": 66
+        }
+      },
       "qmk": "KC_B",
       "qmkAliases": [""],
-      "desc": "Letter B",
       "usbHidCode": "0x05"
     },
     {
+      "desc": "Letter C",
+      "js": {
+        "none": {
+          "code": "KeyC",
+          "key": "c",
+          "keyCode": 67
+        },
+        "shift": {
+          "code": "KeyC",
+          "key": "C",
+          "keyCode": 67
+        }
+      },
       "qmk": "KC_C",
       "qmkAliases": [""],
-      "desc": "Letter C",
       "usbHidCode": "0x06"
     },
     {
+      "desc": "Letter D",
+      "js": {
+        "none": {
+          "code": "KeyD",
+          "key": "d",
+          "keyCode": 68
+        },
+        "shift": {
+          "code": "KeyD",
+          "key": "D",
+          "keyCode": 68
+        }
+      },
       "qmk": "KC_D",
       "qmkAliases": [""],
-      "desc": "Letter D",
       "usbHidCode": "0x07"
     },
     {
+      "desc": "Letter E",
+      "js": {
+        "altGr": {
+          "code": "KeyE",
+          "key": "€",
+          "keyCode": 69
+        },
+        "none": {
+          "code": "KeyE",
+          "key": "e",
+          "keyCode": 69
+        },
+        "shift": {
+          "code": "KeyE",
+          "key": "E",
+          "keyCode": 69
+        }
+      },
       "qmk": "KC_E",
       "qmkAliases": [""],
-      "desc": "Letter E",
       "usbHidCode": "0x08"
     },
     {
+      "desc": "Letter F",
+      "js": {
+        "none": {
+          "code": "KeyF",
+          "key": "f",
+          "keyCode": 70
+        },
+        "shift": {
+          "code": "KeyF",
+          "key": "F",
+          "keyCode": 70
+        }
+      },
       "qmk": "KC_F",
       "qmkAliases": [""],
-      "desc": "Letter F",
       "usbHidCode": "0x09"
     },
     {
+      "desc": "Letter G",
+      "js": {
+        "none": {
+          "code": "KeyG",
+          "key": "g",
+          "keyCode": 71
+        },
+        "shift": {
+          "code": "KeyG",
+          "key": "G",
+          "keyCode": 71
+        }
+      },
       "qmk": "KC_G",
       "qmkAliases": [""],
-      "desc": "Letter G",
       "usbHidCode": "0x0a"
     },
     {
+      "desc": "Letter H",
+      "js": {
+        "none": {
+          "code": "KeyH",
+          "key": "h",
+          "keyCode": 72
+        },
+        "shift": {
+          "code": "KeyH",
+          "key": "H",
+          "keyCode": 72
+        }
+      },
       "qmk": "KC_H",
       "qmkAliases": [""],
-      "desc": "Letter H",
       "usbHidCode": "0x0b"
     },
     {
+      "desc": "Letter I",
+      "js": {
+        "none": {
+          "code": "KeyI",
+          "key": "i",
+          "keyCode": 73
+        },
+        "shift": {
+          "code": "KeyI",
+          "key": "I",
+          "keyCode": 73
+        }
+      },
       "qmk": "KC_I",
       "qmkAliases": [""],
-      "desc": "Letter I",
       "usbHidCode": "0x0c"
     },
     {
+      "desc": "Letter J",
+      "js": {
+        "none": {
+          "code": "KeyJ",
+          "key": "j",
+          "keyCode": 74
+        },
+        "shift": {
+          "code": "KeyJ",
+          "key": "J",
+          "keyCode": 74
+        }
+      },
       "qmk": "KC_J",
       "qmkAliases": [""],
-      "desc": "Letter J",
       "usbHidCode": "0x0d"
     },
     {
+      "desc": "Letter K",
+      "js": {
+        "none": {
+          "code": "KeyK",
+          "key": "k",
+          "keyCode": 75
+        },
+        "shift": {
+          "code": "KeyK",
+          "key": "K",
+          "keyCode": 75
+        }
+      },
       "qmk": "KC_K",
       "qmkAliases": [""],
-      "desc": "Letter K",
       "usbHidCode": "0x0e"
     },
     {
+      "desc": "Letter L",
+      "js": {
+        "none": {
+          "code": "KeyL",
+          "key": "l",
+          "keyCode": 76
+        },
+        "shift": {
+          "code": "KeyL",
+          "key": "L",
+          "keyCode": 76
+        }
+      },
       "qmk": "KC_L",
       "qmkAliases": [""],
-      "desc": "Letter L",
       "usbHidCode": "0x0f"
     },
     {
+      "desc": "Letter M",
+      "js": {
+        "altGr": {
+          "code": "KeyM",
+          "key": "µ",
+          "keyCode": 77
+        },
+        "none": {
+          "code": "KeyM",
+          "key": "m",
+          "keyCode": 77
+        },
+        "shift": {
+          "code": "KeyM",
+          "key": "M",
+          "keyCode": 77
+        }
+      },
       "qmk": "KC_M",
       "qmkAliases": [""],
-      "desc": "Letter M",
       "usbHidCode": "0x10"
     },
     {
+      "desc": "Letter N",
+      "js": {
+        "none": {
+          "code": "KeyN",
+          "key": "n",
+          "keyCode": 78
+        },
+        "shift": {
+          "code": "KeyN",
+          "key": "N",
+          "keyCode": 78
+        }
+      },
       "qmk": "KC_N",
       "qmkAliases": [""],
-      "desc": "Letter N",
       "usbHidCode": "0x11"
     },
     {
+      "desc": "Letter O",
+      "js": {
+        "none": {
+          "code": "KeyO",
+          "key": "o",
+          "keyCode": 79
+        },
+        "shift": {
+          "code": "KeyO",
+          "key": "O",
+          "keyCode": 79
+        }
+      },
       "qmk": "KC_O",
       "qmkAliases": [""],
-      "desc": "Letter O",
       "usbHidCode": "0x12"
     },
     {
+      "desc": "Letter P",
+      "js": {
+        "none": {
+          "code": "KeyP",
+          "key": "p",
+          "keyCode": 80
+        },
+        "shift": {
+          "code": "KeyP",
+          "key": "P",
+          "keyCode": 80
+        }
+      },
       "qmk": "KC_P",
       "qmkAliases": [""],
-      "desc": "Letter P",
       "usbHidCode": "0x13"
     },
     {
+      "desc": "Letter Q",
+      "js": {
+        "none": {
+          "code": "KeyQ",
+          "key": "q",
+          "keyCode": 81
+        },
+        "shift": {
+          "code": "KeyQ",
+          "key": "Q",
+          "keyCode": 81
+        }
+      },
       "qmk": "KC_Q",
       "qmkAliases": [""],
-      "desc": "Letter Q",
       "usbHidCode": "0x14"
     },
     {
+      "desc": "Letter R",
+      "js": {
+        "none": {
+          "code": "KeyR",
+          "key": "r",
+          "keyCode": 82
+        },
+        "shift": {
+          "code": "KeyR",
+          "key": "R",
+          "keyCode": 82
+        }
+      },
       "qmk": "KC_R",
       "qmkAliases": [""],
-      "desc": "Letter R",
       "usbHidCode": "0x15"
     },
     {
+      "desc": "Letter S",
+      "js": {
+        "none": {
+          "code": "KeyS",
+          "key": "s",
+          "keyCode": 83
+        },
+        "shift": {
+          "code": "KeyS",
+          "key": "S",
+          "keyCode": 83
+        }
+      },
       "qmk": "KC_S",
       "qmkAliases": [""],
-      "desc": "Letter S",
       "usbHidCode": "0x16"
     },
     {
+      "desc": "Letter T",
+      "js": {
+        "none": {
+          "code": "KeyT",
+          "key": "t",
+          "keyCode": 84
+        },
+        "shift": {
+          "code": "KeyT",
+          "key": "T",
+          "keyCode": 84
+        }
+      },
       "qmk": "KC_T",
       "qmkAliases": [""],
-      "desc": "Letter T",
       "usbHidCode": "0x17"
     },
     {
+      "desc": "Letter U",
+      "js": {
+        "none": {
+          "code": "KeyU",
+          "key": "u",
+          "keyCode": 85
+        },
+        "shift": {
+          "code": "KeyU",
+          "key": "U",
+          "keyCode": 85
+        }
+      },
       "qmk": "KC_U",
       "qmkAliases": [""],
-      "desc": "Letter U",
       "usbHidCode": "0x18"
     },
     {
+      "desc": "Letter V",
+      "js": {
+        "none": {
+          "code": "KeyV",
+          "key": "v",
+          "keyCode": 86
+        },
+        "shift": {
+          "code": "KeyV",
+          "key": "V",
+          "keyCode": 86
+        }
+      },
       "qmk": "KC_V",
       "qmkAliases": [""],
-      "desc": "Letter V",
       "usbHidCode": "0x19"
     },
     {
+      "desc": "Letter W",
+      "js": {
+        "none": {
+          "code": "KeyW",
+          "key": "w",
+          "keyCode": 87
+        },
+        "shift": {
+          "code": "KeyW",
+          "key": "W",
+          "keyCode": 87
+        }
+      },
       "qmk": "KC_W",
       "qmkAliases": [""],
-      "desc": "Letter W",
       "usbHidCode": "0x1a"
     },
     {
+      "desc": "Letter X",
+      "js": {
+        "none": {
+          "code": "KeyX",
+          "key": "x",
+          "keyCode": 88
+        },
+        "shift": {
+          "code": "KeyX",
+          "key": "X",
+          "keyCode": 88
+        }
+      },
       "qmk": "KC_X",
       "qmkAliases": [""],
-      "desc": "Letter X",
       "usbHidCode": "0x1b"
     },
     {
+      "desc": "Letter Y",
+      "js": {
+        "none": {
+          "code": "KeyY",
+          "key": "y",
+          "keyCode": 89
+        },
+        "shift": {
+          "code": "KeyY",
+          "key": "Y",
+          "keyCode": 89
+        }
+      },
       "qmk": "KC_Y",
       "qmkAliases": [""],
-      "desc": "Letter Y",
       "usbHidCode": "0x1c"
     },
     {
+      "desc": "Letter Z",
+      "js": {
+        "none": {
+          "code": "KeyZ",
+          "key": "z",
+          "keyCode": 90
+        },
+        "shift": {
+          "code": "KeyZ",
+          "key": "Z",
+          "keyCode": 90
+        }
+      },
       "qmk": "KC_Z",
       "qmkAliases": [""],
-      "desc": "Letter Z",
       "usbHidCode": "0x1d"
     },
     {
+      "desc": "Number 1",
+      "js": {
+        "none": {
+          "code": "Digit1",
+          "key": "1",
+          "keyCode": 49
+        },
+        "shift": {
+          "code": "Digit1",
+          "key": "!",
+          "keyCode": 49
+        }
+      },
       "qmk": "KC_1",
       "qmkAliases": [""],
-      "desc": "Number 1",
       "usbHidCode": "0x1e"
     },
     {
+      "desc": "Number 2",
+      "js": {
+        "altGr": {
+          "code": "Digit2",
+          "key": "@",
+          "keyCode": 50
+        },
+        "none": {
+          "code": "Digit2",
+          "key": "2",
+          "keyCode": 50
+        },
+        "shift": {
+          "code": "Digit2",
+          "key": "\"",
+          "keyCode": 50
+        }
+      },
       "qmk": "KC_2",
       "qmkAliases": [""],
-      "desc": "Number 2",
       "usbHidCode": "0x1f"
     },
     {
+      "desc": "Number 3",
+      "js": {
+        "altGr": {
+          "code": "Digit3",
+          "key": "£",
+          "keyCode": 51
+        },
+        "none": {
+          "code": "Digit3",
+          "key": "3",
+          "keyCode": 51
+        },
+        "shift": {
+          "code": "Digit3",
+          "key": "#",
+          "keyCode": 51
+        }
+      },
       "qmk": "KC_3",
       "qmkAliases": [""],
-      "desc": "Number 3",
       "usbHidCode": "0x20"
     },
     {
+      "desc": "Number 4",
+      "js": {
+        "altGr": {
+          "code": "Digit4",
+          "key": "$",
+          "keyCode": 52
+        },
+        "none": {
+          "code": "Digit4",
+          "key": "4",
+          "keyCode": 52
+        },
+        "shift": {
+          "code": "Digit4",
+          "key": "¤",
+          "keyCode": 52
+        }
+      },
       "qmk": "KC_4",
       "qmkAliases": [""],
-      "desc": "Number 4",
       "usbHidCode": "0x21"
     },
     {
+      "desc": "Number 5",
+      "js": {
+        "altGr": {
+          "code": "Digit5",
+          "key": "€",
+          "keyCode": 53
+        },
+        "none": {
+          "code": "Digit5",
+          "key": "5",
+          "keyCode": 53
+        },
+        "shift": {
+          "code": "Digit5",
+          "key": "%",
+          "keyCode": 53
+        }
+      },
       "qmk": "KC_5",
       "qmkAliases": [""],
-      "desc": "Number 5",
       "usbHidCode": "0x22"
     },
     {
+      "desc": "Number 6",
+      "js": {
+        "none": {
+          "code": "Digit6",
+          "key": "6",
+          "keyCode": 54
+        },
+        "shift": {
+          "code": "Digit6",
+          "key": "&",
+          "keyCode": 54
+        }
+      },
       "qmk": "KC_6",
       "qmkAliases": [""],
-      "desc": "Number 6",
       "usbHidCode": "0x23"
     },
     {
+      "desc": "Number 7",
+      "js": {
+        "altGr": {
+          "code": "Digit7",
+          "key": "{",
+          "keyCode": 55
+        },
+        "none": {
+          "code": "Digit7",
+          "key": "7",
+          "keyCode": 55
+        },
+        "shift": {
+          "code": "Digit7",
+          "key": "/",
+          "keyCode": 55
+        }
+      },
       "qmk": "KC_7",
       "qmkAliases": [""],
-      "desc": "Number 7",
       "usbHidCode": "0x24"
     },
     {
+      "desc": "Number 8",
+      "js": {
+        "altGr": {
+          "code": "Digit8",
+          "key": "[",
+          "keyCode": 56
+        },
+        "none": {
+          "code": "Digit8",
+          "key": "8",
+          "keyCode": 56
+        },
+        "shift": {
+          "code": "Digit8",
+          "key": "(",
+          "keyCode": 56
+        }
+      },
       "qmk": "KC_8",
       "qmkAliases": [""],
-      "desc": "Number 8",
       "usbHidCode": "0x25"
     },
     {
+      "desc": "Number 9",
+      "js": {
+        "altGr": {
+          "code": "Digit9",
+          "key": "]",
+          "keyCode": 57
+        },
+        "none": {
+          "code": "Digit9",
+          "key": "9",
+          "keyCode": 57
+        },
+        "shift": {
+          "code": "Digit9",
+          "key": ")",
+          "keyCode": 57
+        }
+      },
       "qmk": "KC_9",
       "qmkAliases": [""],
-      "desc": "Number 9",
       "usbHidCode": "0x26"
     },
     {
+      "desc": "Number 0",
+      "js": {
+        "altGr": {
+          "code": "Digit0",
+          "key": "}",
+          "keyCode": 48
+        },
+        "none": {
+          "code": "Digit0",
+          "key": "0",
+          "keyCode": 48
+        },
+        "shift": {
+          "code": "Digit0",
+          "key": "=",
+          "keyCode": 48
+        }
+      },
       "qmk": "KC_0",
       "qmkAliases": [""],
-      "desc": "Number 0",
       "usbHidCode": "0x27"
     },
     {
+      "desc": "Enter",
+      "js": {
+        "none": {
+          "code": "Enter",
+          "key": "Enter",
+          "keyCode": 13
+        }
+      },
       "qmk": "KC_ENTER",
       "qmkAliases": ["KC_ENT"],
-      "desc": "Enter",
       "usbHidCode": "0x28"
     },
     {
+      "desc": "Escape",
+      "js": {
+        "none": {
+          "code": "Escape",
+          "key": "Escape",
+          "keyCode": 27
+        }
+      },
       "qmk": "KC_ESCAPE",
       "qmkAliases": ["KC_ESC"],
-      "desc": "Escape",
       "usbHidCode": "0x29"
     },
     {
+      "desc": "Backspace",
+      "js": {
+        "none": {
+          "code": "Backspace",
+          "key": "Backspace",
+          "keyCode": 8
+        }
+      },
       "qmk": "KC_BACKSPACE",
       "qmkAliases": ["KC_BSPC"],
-      "desc": "Backspace",
       "usbHidCode": "0x2a"
     },
     {
+      "desc": "Tab",
+      "js": {
+        "none": {
+          "code": "Tab",
+          "key": "Tab",
+          "keyCode": 9
+        }
+      },
       "qmk": "KC_TAB",
       "qmkAliases": [""],
-      "desc": "Tab",
       "usbHidCode": "0x2b"
     },
     {
+      "desc": "Spacebar",
+      "js": {
+        "none": {
+          "code": "Space",
+          "key": " ",
+          "keyCode": 32
+        }
+      },
       "qmk": "KC_SPACE",
       "qmkAliases": ["KC_SPC"],
-      "desc": "Spacebar",
       "usbHidCode": "0x2c"
     },
     {
+      "desc": "Minus",
+      "js": {
+        "none": {
+          "code": "Minus",
+          "key": "+",
+          "keyCode": 171
+        },
+        "shift": {
+          "code": "Minus",
+          "key": "?",
+          "keyCode": 171
+        }
+      },
       "qmk": "KC_MINUS",
       "qmkAliases": ["KC_MINS"],
-      "desc": "Minus",
       "usbHidCode": "0x2D"
     },
     {
+      "desc": "Equal sign",
+      "js": {
+        "altGr": {
+          "code": "Equal",
+          "key": "´",
+          "keyCode": 220
+        },
+        "none": {
+          "code": "Equal",
+          "key": "\\",
+          "keyCode": 220
+        },
+        "shift": {
+          "code": "Equal",
+          "key": "`",
+          "keyCode": 220
+        }
+      },
       "qmk": "KC_EQUAL",
       "qmkAliases": ["KC_EQL"],
-      "desc": "Equal sign",
       "usbHidCode": "0x2E"
     },
     {
+      "desc": "Left bracket",
+      "js": {
+        "none": {
+          "code": "BracketLeft",
+          "key": "å",
+          "keyCode": 221
+        },
+        "shift": {
+          "code": "BracketLeft",
+          "key": "Å",
+          "keyCode": 221
+        }
+      },
       "qmk": "KC_LEFT_BRACKET",
       "qmkAliases": ["KC_LBRC"],
-      "desc": "Left bracket",
       "usbHidCode": "0x2F"
     },
     {
+      "desc": "Right bracket",
+      "js": {
+        "altGr": {
+          "code": "BracketRight",
+          "key": "~",
+          "keyCode": 160
+        },
+        "none": {
+          "code": "BracketRight",
+          "key": "¨",
+          "keyCode": 160
+        },
+        "shift": {
+          "code": "BracketRight",
+          "key": "^",
+          "keyCode": 160
+        }
+      },
       "qmk": "KC_RIGHT_BRACKET",
       "qmkAliases": ["KC_RBRC"],
-      "desc": "Right bracket",
       "usbHidCode": "0x30"
     },
     {
+      "desc": "Backslash",
+      "js": {
+        "none": {
+          "code": "Backslash",
+          "key": "'",
+          "keyCode": 222
+        },
+        "shift": {
+          "code": "Backslash",
+          "key": "*",
+          "keyCode": 222
+        }
+      },
       "qmk": "KC_BACKSLASH",
       "qmkAliases": ["KC_BSLS"],
-      "desc": "Backslash",
       "usbHidCode": "0x31"
     },
     {
+      "desc": "Non-us hash sign",
       "qmk": "KC_NONUS_HASH",
       "qmkAliases": ["KC_NUHS"],
-      "desc": "Non-us hash sign",
       "usbHidCode": "0x32"
     },
     {
+      "desc": "Semicolon",
+      "js": {
+        "none": {
+          "code": "Semicolon",
+          "key": "ø",
+          "keyCode": 192
+        },
+        "shift": {
+          "code": "Semicolon",
+          "key": "Ø",
+          "keyCode": 192
+        }
+      },
       "qmk": "KC_SEMICOLON",
       "qmkAliases": ["KC_SCLN"],
-      "desc": "Semicolon",
       "usbHidCode": "0x33"
     },
     {
+      "desc": "Quote",
+      "js": {
+        "none": {
+          "code": "Quote",
+          "key": "æ",
+          "keyCode": 222
+        },
+        "shift": {
+          "code": "Quote",
+          "key": "Æ",
+          "keyCode": 222
+        }
+      },
       "qmk": "KC_QUOTE",
       "qmkAliases": ["KC_QUOT"],
-      "desc": "Quote",
       "usbHidCode": "0x34"
     },
     {
+      "desc": "Grave",
+      "js": {
+        "none": {
+          "code": "Backquote",
+          "key": "|",
+          "keyCode": 172
+        },
+        "shift": {
+          "code": "Backquote",
+          "key": "§",
+          "keyCode": 172
+        }
+      },
       "qmk": "KC_GRAVE",
       "qmkAliases": ["KC_GRV"],
-      "desc": "Grave",
       "usbHidCode": "0x35"
     },
     {
+      "desc": "Comma",
+      "js": {
+        "none": {
+          "code": "Comma",
+          "key": ",",
+          "keyCode": 188
+        },
+        "shift": {
+          "code": "Comma",
+          "key": ";",
+          "keyCode": 188
+        }
+      },
       "qmk": "KC_COMMA",
       "qmkAliases": ["KC_COMM"],
-      "desc": "Comma",
       "usbHidCode": "0x36"
     },
     {
+      "desc": "Dot",
+      "js": {
+        "none": {
+          "code": "Period",
+          "key": ".",
+          "keyCode": 190
+        },
+        "shift": {
+          "code": "Period",
+          "key": ":",
+          "keyCode": 190
+        }
+      },
       "qmk": "KC_DOT",
       "qmkAliases": [""],
-      "desc": "Dot",
       "usbHidCode": "0x37"
     },
     {
+      "desc": "Slash",
+      "js": {
+        "none": {
+          "code": "Slash",
+          "key": "-",
+          "keyCode": 173
+        },
+        "shift": {
+          "code": "Slash",
+          "key": "_",
+          "keyCode": 173
+        }
+      },
       "qmk": "KC_SLASH",
       "qmkAliases": ["KC_SLSH"],
-      "desc": "Slash",
       "usbHidCode": "0x38"
     },
     {
+      "desc": "Caps lock",
+      "js": {
+        "none": {
+          "code": "CapsLock",
+          "key": "CapsLock",
+          "keyCode": 20
+        }
+      },
       "qmk": "KC_CAPS_LOCK",
       "qmkAliases": ["KC_CAPS"],
-      "desc": "Caps lock",
       "usbHidCode": "0x39"
     },
     {
+      "desc": "F1",
+      "js": {
+        "none": {
+          "code": "F1",
+          "key": "F1",
+          "keyCode": 112
+        }
+      },
       "qmk": "KC_F1",
       "qmkAliases": [""],
-      "desc": "F1",
       "usbHidCode": "0x3A"
     },
     {
+      "desc": "F2",
+      "js": {
+        "none": {
+          "code": "F2",
+          "key": "F2",
+          "keyCode": 113
+        }
+      },
       "qmk": "KC_F2",
       "qmkAliases": [""],
-      "desc": "F2",
       "usbHidCode": "0x3B"
     },
     {
+      "desc": "F3",
+      "js": {
+        "none": {
+          "code": "F3",
+          "key": "F3",
+          "keyCode": 114
+        }
+      },
       "qmk": "KC_F3",
       "qmkAliases": [""],
-      "desc": "F3",
       "usbHidCode": "0x3C"
     },
     {
+      "desc": "F4",
+      "js": {
+        "none": {
+          "code": "F4",
+          "key": "F4",
+          "keyCode": 115
+        }
+      },
       "qmk": "KC_F4",
       "qmkAliases": [""],
-      "desc": "F4",
       "usbHidCode": "0x3D"
     },
     {
+      "desc": "F5",
+      "js": {
+        "none": {
+          "code": "F5",
+          "key": "F5",
+          "keyCode": 116
+        }
+      },
       "qmk": "KC_F5",
       "qmkAliases": [""],
-      "desc": "F5",
       "usbHidCode": "0x3E"
     },
     {
+      "desc": "F6",
+      "js": {
+        "none": {
+          "code": "F6",
+          "key": "F6",
+          "keyCode": 117
+        }
+      },
       "qmk": "KC_F6",
       "qmkAliases": [""],
-      "desc": "F6",
       "usbHidCode": "0x3F"
     },
     {
+      "desc": "F7",
+      "js": {
+        "none": {
+          "code": "F7",
+          "key": "F7",
+          "keyCode": 118
+        }
+      },
       "qmk": "KC_F7",
       "qmkAliases": [""],
-      "desc": "F7",
       "usbHidCode": "0x40"
     },
     {
+      "desc": "F8",
+      "js": {
+        "none": {
+          "code": "F8",
+          "key": "F8",
+          "keyCode": 119
+        }
+      },
       "qmk": "KC_F8",
       "qmkAliases": [""],
-      "desc": "F8",
       "usbHidCode": "0x41"
     },
     {
+      "desc": "F9",
+      "js": {
+        "none": {
+          "code": "F9",
+          "key": "F9",
+          "keyCode": 120
+        }
+      },
       "qmk": "KC_F9",
       "qmkAliases": [""],
-      "desc": "F9",
       "usbHidCode": "0x42"
     },
     {
+      "desc": "F10",
+      "js": {
+        "none": {
+          "code": "F10",
+          "key": "F10",
+          "keyCode": 121
+        }
+      },
       "qmk": "KC_F10",
       "qmkAliases": [""],
-      "desc": "F10",
       "usbHidCode": "0x43"
     },
     {
+      "desc": "F11",
+      "js": {
+        "none": {
+          "code": "F11",
+          "key": "F11",
+          "keyCode": 122
+        }
+      },
       "qmk": "KC_F11",
       "qmkAliases": [""],
-      "desc": "F11",
       "usbHidCode": "0x44"
     },
     {
+      "desc": "F12",
+      "js": {
+        "none": {
+          "code": "F12",
+          "key": "F12",
+          "keyCode": 123
+        }
+      },
       "qmk": "KC_F12",
       "qmkAliases": [""],
-      "desc": "F12",
       "usbHidCode": "0x45"
     },
     {
+      "desc": "Print screen",
+      "js": {
+        "none": {
+          "code": "PrintScreen",
+          "key": "PrintScreen",
+          "keyCode": 44
+        }
+      },
       "qmk": "KC_PRINT_SCREEN",
       "qmkAliases": ["KC_PSCR"],
-      "desc": "Print screen",
       "usbHidCode": "0x46"
     },
     {
+      "desc": "Scroll Lock",
+      "js": {
+        "none": {
+          "code": "ScrollLock",
+          "key": "ScrollLock",
+          "keyCode": 145
+        }
+      },
       "qmk": "KC_SCROLL_LOCK",
       "qmkAliases": ["KC_SCRL", "KC_BRMD"],
-      "desc": "Scroll Lock",
       "usbHidCode": "0x47"
     },
     {
+      "desc": "Pause/Break",
+      "js": {
+        "none": {
+          "code": "Pause",
+          "key": "Pause",
+          "keyCode": 19
+        }
+      },
       "qmk": "KC_PAUSE",
       "qmkAliases": ["KC_PAUS", "KC_BRK", "KC_BRMU"],
-      "desc": "Pause/Break",
       "usbHidCode": "0x48"
     },
     {
+      "desc": "Insert",
+      "js": {
+        "none": {
+          "code": "Insert",
+          "key": "Insert",
+          "keyCode": 45
+        }
+      },
       "qmk": "KC_INSERT",
       "qmkAliases": ["KC_INS"],
-      "desc": "Insert",
       "usbHidCode": "0x49"
     },
     {
+      "desc": "Home",
+      "js": {
+        "none": {
+          "code": "Home",
+          "key": "Home",
+          "keyCode": 36
+        }
+      },
       "qmk": "KC_HOME",
       "qmkAliases": [""],
-      "desc": "Home",
       "usbHidCode": "0x4A"
     },
     {
+      "desc": "Page Up",
+      "js": {
+        "none": {
+          "code": "PageUp",
+          "key": "PageUp",
+          "keyCode": 33
+        }
+      },
       "qmk": "KC_PAGE_UP",
       "qmkAliases": ["KC_PGUP"],
-      "desc": "Page Up",
       "usbHidCode": "0x4B"
     },
     {
+      "desc": "Delete",
+      "js": {
+        "none": {
+          "code": "Delete",
+          "key": "Delete",
+          "keyCode": 46
+        }
+      },
       "qmk": "KC_DELETE",
       "qmkAliases": ["KC_DEL"],
-      "desc": "Delete",
       "usbHidCode": "0x4C"
     },
     {
+      "desc": "End",
+      "js": {
+        "none": {
+          "code": "End",
+          "key": "End",
+          "keyCode": 35
+        }
+      },
       "qmk": "KC_END",
       "qmkAliases": [""],
-      "desc": "End",
       "usbHidCode": "0x4D"
     },
     {
+      "desc": "Page Down",
+      "js": {
+        "none": {
+          "code": "PageDown",
+          "key": "PageDown",
+          "keyCode": 34
+        }
+      },
       "qmk": "KC_PAGE_DOWN",
       "qmkAliases": ["KC_PGDN"],
-      "desc": "Page Down",
       "usbHidCode": "0x4E"
     },
     {
+      "desc": "Arrow Right",
+      "js": {
+        "none": {
+          "code": "ArrowRight",
+          "key": "ArrowRight",
+          "keyCode": 39
+        }
+      },
       "qmk": "KC_RIGHT",
       "qmkAliases": ["KC_RGHT"],
-      "desc": "Arrow Right",
       "usbHidCode": "0x4F"
     },
     {
+      "desc": "Arrow Left",
+      "js": {
+        "none": {
+          "code": "ArrowLeft",
+          "key": "ArrowLeft",
+          "keyCode": 37
+        }
+      },
       "qmk": "KC_LEFT",
       "qmkAliases": [""],
-      "desc": "Arrow Left",
       "usbHidCode": "0x50"
     },
     {
+      "desc": "Arrow Down",
+      "js": {
+        "none": {
+          "code": "ArrowDown",
+          "key": "ArrowDown",
+          "keyCode": 40
+        }
+      },
       "qmk": "KC_DOWN",
       "qmkAliases": [""],
-      "desc": "Arrow Down",
       "usbHidCode": "0x51"
     },
     {
+      "desc": "Arrow Up",
+      "js": {
+        "none": {
+          "code": "ArrowUp",
+          "key": "ArrowUp",
+          "keyCode": 38
+        }
+      },
       "qmk": "KC_UP",
       "qmkAliases": [""],
-      "desc": "Arrow Up",
       "usbHidCode": "0x52"
     },
     {
+      "desc": "Keypad Num lock",
+      "js": {
+        "none": {
+          "code": "NumLock",
+          "key": "NumLock",
+          "keyCode": 144
+        }
+      },
       "qmk": "KC_NUM_LOCK",
       "qmkAliases": ["KC_NUM"],
-      "desc": "Keypad Num lock",
       "usbHidCode": "0x53"
     },
     {
+      "desc": "Keypad Slash",
+      "js": {
+        "none": {
+          "code": "NumpadDivide",
+          "key": "/",
+          "keyCode": 111
+        }
+      },
       "qmk": "KC_KP_SLASH",
       "qmkAliases": ["KC_PSLS"],
-      "desc": "Keypad Slash",
       "usbHidCode": "0x54"
     },
     {
+      "desc": "Keypad Asterisk",
+      "js": {
+        "none": {
+          "code": "NumpadMultiply",
+          "key": "*",
+          "keyCode": 106
+        }
+      },
       "qmk": "KC_KP_ASTERISK",
       "qmkAliases": ["KC_PAST"],
-      "desc": "Keypad Asterisk",
       "usbHidCode": "0x55"
     },
     {
+      "desc": "Keypad Minus",
+      "js": {
+        "none": {
+          "code": "NumpadSubtract",
+          "key": "-",
+          "keyCode": 109
+        }
+      },
       "qmk": "KC_KP_MINUS",
       "qmkAliases": ["KC_PMNS"],
-      "desc": "Keypad Minus",
       "usbHidCode": "0x56"
     },
     {
+      "desc": "Keypad Plus",
+      "js": {
+        "none": {
+          "code": "NumpadAdd",
+          "key": "+",
+          "keyCode": 107
+        }
+      },
       "qmk": "KC_KP_PLUS",
       "qmkAliases": ["KC_PPLS"],
-      "desc": "Keypad Plus",
       "usbHidCode": "0x57"
     },
     {
+      "desc": "Keypad Enter",
+      "js": {
+        "none": {
+          "code": "NumpadEnter",
+          "key": "Enter",
+          "keyCode": 13
+        }
+      },
       "qmk": "KC_KP_ENTER",
       "qmkAliases": ["KC_PENT"],
-      "desc": "Keypad Enter",
       "usbHidCode": "0x58"
     },
     {
+      "desc": "Keypad 1",
+      "js": {
+        "none": {
+          "code": "Numpad1",
+          "key": "1",
+          "keyCode": 97
+        }
+      },
       "qmk": "KC_KP_1",
       "qmkAliases": ["KC_P1"],
-      "desc": "Keypad 1",
       "usbHidCode": "0x59"
     },
     {
+      "desc": "Keypad 2",
+      "js": {
+        "none": {
+          "code": "Numpad2",
+          "key": "2",
+          "keyCode": 98
+        }
+      },
       "qmk": "KC_KP_2",
       "qmkAliases": ["KC_P2"],
-      "desc": "Keypad 2",
       "usbHidCode": "0x5A"
     },
     {
+      "desc": "Keypad 3",
+      "js": {
+        "none": {
+          "code": "Numpad3",
+          "key": "3",
+          "keyCode": 99
+        }
+      },
       "qmk": "KC_KP_3",
       "qmkAliases": ["KC_P3"],
-      "desc": "Keypad 3",
       "usbHidCode": "0x5B"
     },
     {
+      "desc": "Keypad 4",
+      "js": {
+        "none": {
+          "code": "Numpad4",
+          "key": "4",
+          "keyCode": 100
+        }
+      },
       "qmk": "KC_KP_4",
       "qmkAliases": ["KC_P4"],
-      "desc": "Keypad 4",
       "usbHidCode": "0x5C"
     },
     {
+      "desc": "Keypad 5",
+      "js": {
+        "none": {
+          "code": "Numpad5",
+          "key": "5",
+          "keyCode": 101
+        }
+      },
       "qmk": "KC_KP_5",
       "qmkAliases": ["KC_P5"],
-      "desc": "Keypad 5",
       "usbHidCode": "0x5D"
     },
     {
+      "desc": "Keypad 6",
+      "js": {
+        "none": {
+          "code": "Numpad6",
+          "key": "6",
+          "keyCode": 102
+        }
+      },
       "qmk": "KC_KP_6",
       "qmkAliases": ["KC_P6"],
-      "desc": "Keypad 6",
       "usbHidCode": "0x5E"
     },
     {
+      "desc": "Keypad 7",
+      "js": {
+        "none": {
+          "code": "Numpad7",
+          "key": "7",
+          "keyCode": 103
+        }
+      },
       "qmk": "KC_KP_7",
       "qmkAliases": ["KC_P7"],
-      "desc": "Keypad 7",
       "usbHidCode": "0x5F"
     },
     {
+      "desc": "Keypad 8",
+      "js": {
+        "none": {
+          "code": "Numpad8",
+          "key": "8",
+          "keyCode": 104
+        }
+      },
       "qmk": "KC_KP_8",
       "qmkAliases": ["KC_P8"],
-      "desc": "Keypad 8",
       "usbHidCode": "0x60"
     },
     {
+      "desc": "Keypad 9",
+      "js": {
+        "none": {
+          "code": "Numpad9",
+          "key": "9",
+          "keyCode": 105
+        }
+      },
       "qmk": "KC_KP_9",
       "qmkAliases": ["KC_P9"],
-      "desc": "Keypad 9",
       "usbHidCode": "0x61"
     },
     {
+      "desc": "Keypad 0",
+      "js": {
+        "none": {
+          "code": "Numpad0",
+          "key": "0",
+          "keyCode": 96
+        }
+      },
       "qmk": "KC_KP_0",
       "qmkAliases": ["KC_P0"],
-      "desc": "Keypad 0",
       "usbHidCode": "0x62"
     },
     {
+      "desc": "Keypad Dot",
+      "js": {
+        "none": {
+          "code": "NumpadDecimal",
+          "key": ",",
+          "keyCode": 110
+        }
+      },
       "qmk": "KC_KP_DOT",
       "qmkAliases": ["KC_PDOT"],
-      "desc": "Keypad Dot",
       "usbHidCode": "0x63"
     },
     {
+      "desc": "Non-us backslash",
+      "js": {
+        "none": {
+          "code": "IntlBackslash",
+          "key": "<",
+          "keyCode": 60
+        },
+        "shift": {
+          "code": "IntlBackslash",
+          "key": ">",
+          "keyCode": 60
+        }
+      },
       "qmk": "KC_NONUS_BACKSLASH",
       "qmkAliases": ["KC_NUBS"],
-      "desc": "Non-us backslash",
       "usbHidCode": "0x64"
     },
     {
+      "desc": "Application (Context menu)",
+      "js": {
+        "none": {
+          "code": "ContextMenu",
+          "key": "ContextMenu",
+          "keyCode": 93
+        }
+      },
       "qmk": "KC_APPLICATION",
       "qmkAliases": ["KC_APP"],
-      "desc": "Application (Context menu)",
       "usbHidCode": "0x65"
     },
     {
+      "desc": "System power",
       "qmk": "KC_KB_POWER",
       "qmkAliases": [""],
-      "desc": "System power",
       "usbHidCode": "0x66"
     },
     {
+      "desc": "Keypad Equal",
       "qmk": "KC_KP_EQUAL",
       "qmkAliases": ["KC_PEQL"],
-      "desc": "Keypad Equal",
       "usbHidCode": "0x67"
     },
     {
+      "desc": "F13",
+      "js": {
+        "none": {
+          "code": "F13",
+          "key": "F13",
+          "keyCode": 124
+        }
+      },
       "qmk": "KC_F13",
       "qmkAliases": [""],
-      "desc": "F13",
       "usbHidCode": "0x68"
     },
     {
+      "desc": "F14",
+      "js": {
+        "none": {
+          "code": "F14",
+          "key": "F14",
+          "keyCode": 125
+        }
+      },
       "qmk": "KC_F14",
       "qmkAliases": [""],
-      "desc": "F14",
       "usbHidCode": "0x69"
     },
     {
+      "desc": "F15",
+      "js": {
+        "none": {
+          "code": "F15",
+          "key": "F15",
+          "keyCode": 126
+        }
+      },
       "qmk": "KC_F15",
       "qmkAliases": [""],
-      "desc": "F15",
       "usbHidCode": "0x6A"
     },
     {
+      "desc": "F16",
+      "js": {
+        "none": {
+          "code": "F16",
+          "key": "F16",
+          "keyCode": 127
+        }
+      },
       "qmk": "KC_F16",
       "qmkAliases": [""],
-      "desc": "F16",
       "usbHidCode": "0x6B"
     },
     {
+      "desc": "F17",
+      "js": {
+        "none": {
+          "code": "F17",
+          "key": "F17",
+          "keyCode": 128
+        }
+      },
       "qmk": "KC_F17",
       "qmkAliases": [""],
-      "desc": "F17",
       "usbHidCode": "0x6C"
     },
     {
+      "desc": "F18",
+      "js": {
+        "none": {
+          "code": "F18",
+          "key": "F18",
+          "keyCode": 129
+        }
+      },
       "qmk": "KC_F18",
       "qmkAliases": [""],
-      "desc": "F18",
       "usbHidCode": "0x6D"
     },
     {
+      "desc": "F19",
+      "js": {
+        "none": {
+          "code": "F19",
+          "key": "F19",
+          "keyCode": 130
+        }
+      },
       "qmk": "KC_F19",
       "qmkAliases": [""],
-      "desc": "F19",
       "usbHidCode": "0x6E"
     },
     {
+      "desc": "F20",
+      "js": {
+        "none": {
+          "code": "F20",
+          "key": "F20",
+          "keyCode": 131
+        }
+      },
       "qmk": "KC_F20",
       "qmkAliases": [""],
-      "desc": "F20",
       "usbHidCode": "0x6F"
     },
     {
+      "desc": "F21",
+      "js": {
+        "none": {
+          "code": "F21",
+          "key": "F21",
+          "keyCode": 132
+        }
+      },
       "qmk": "KC_F21",
       "qmkAliases": [""],
-      "desc": "F21",
       "usbHidCode": "0x70"
     },
     {
+      "desc": "F22",
+      "js": {
+        "none": {
+          "code": "F22",
+          "key": "F22",
+          "keyCode": 133
+        }
+      },
       "qmk": "KC_F22",
       "qmkAliases": [""],
-      "desc": "F22",
       "usbHidCode": "0x71"
     },
     {
+      "desc": "F23",
+      "js": {
+        "none": {
+          "code": "F23",
+          "key": "F23",
+          "keyCode": 134
+        }
+      },
       "qmk": "KC_F23",
       "qmkAliases": [""],
-      "desc": "F23",
       "usbHidCode": "0x72"
     },
     {
+      "desc": "F24",
+      "js": {
+        "none": {
+          "code": "F24",
+          "key": "F24",
+          "keyCode": 135
+        }
+      },
       "qmk": "KC_F24",
       "qmkAliases": [""],
-      "desc": "F24",
       "usbHidCode": "0x73"
     },
     {
+      "desc": "Execute",
       "qmk": "KC_EXECUTE",
       "qmkAliases": ["KC_EXEC"],
-      "desc": "Execute",
       "usbHidCode": ""
     },
     {
+      "desc": "Help",
       "qmk": "KC_HELP",
       "qmkAliases": [""],
-      "desc": "Help",
       "usbHidCode": ""
     },
     {
+      "desc": "Menu",
       "qmk": "KC_MENU",
       "qmkAliases": [""],
-      "desc": "Menu",
       "usbHidCode": ""
     },
     {
+      "desc": "Select",
       "qmk": "KC_SELECT",
       "qmkAliases": ["KC_SLCT"],
-      "desc": "Select",
       "usbHidCode": ""
     },
     {
+      "desc": "Stop",
       "qmk": "KC_STOP",
       "qmkAliases": [""],
-      "desc": "Stop",
       "usbHidCode": ""
     },
     {
+      "desc": "Again",
       "qmk": "KC_AGAIN",
       "qmkAliases": ["KC_AGIN"],
-      "desc": "Again",
       "usbHidCode": ""
     },
     {
+      "desc": "Undo",
       "qmk": "KC_UNDO",
       "qmkAliases": [""],
-      "desc": "Undo",
       "usbHidCode": ""
     },
     {
+      "desc": "Cut",
       "qmk": "KC_CUT",
       "qmkAliases": [""],
-      "desc": "Cut",
       "usbHidCode": ""
     },
     {
+      "desc": "Copy",
       "qmk": "KC_COPY",
       "qmkAliases": [""],
-      "desc": "Copy",
       "usbHidCode": ""
     },
     {
+      "desc": "Paste",
       "qmk": "KC_PASTE",
       "qmkAliases": ["KC_PSTE"],
-      "desc": "Paste",
       "usbHidCode": ""
     },
     {
+      "desc": "FIND",
       "qmk": "KC_FIND",
       "qmkAliases": [""],
-      "desc": "FIND",
       "usbHidCode": ""
     },
     {
+      "desc": "Mute",
       "qmk": "KC_KB_MUTE",
       "qmkAliases": [""],
-      "desc": "Mute",
       "usbHidCode": ""
     },
     {
+      "desc": "Volume Up",
       "qmk": "KC_KB_VOLUME_UP",
       "qmkAliases": [""],
-      "desc": "Volume Up",
       "usbHidCode": ""
     },
     {
+      "desc": "Volume Down",
       "qmk": "KC_KB_VOLUME_DOWN",
       "qmkAliases": [""],
-      "desc": "Volume Down",
       "usbHidCode": ""
     },
     {
+      "desc": "Locking Caps Lock",
       "qmk": "KC_LOCKING_CAPS_LOCK",
       "qmkAliases": ["KC_LCAP"],
-      "desc": "Locking Caps Lock",
       "usbHidCode": ""
     },
     {
+      "desc": "Locking Num Lock",
       "qmk": "KC_LOCKING_NUM_LOCK",
       "qmkAliases": ["KC_LNUM"],
-      "desc": "Locking Num Lock",
       "usbHidCode": ""
     },
     {
+      "desc": "Locking Scroll Lock",
       "qmk": "KC_LOCKING_SCROLL_LOCK",
       "qmkAliases": ["KC_LSCR"],
-      "desc": "Locking Scroll Lock",
       "usbHidCode": ""
     },
     {
+      "desc": "Keypad Comma",
       "qmk": "KC_KP_COMMA",
       "qmkAliases": ["KC_PCMM"],
-      "desc": "Keypad Comma",
       "usbHidCode": ""
     },
     {
+      "desc": "AS400 Equal sign",
       "qmk": "KC_KP_EQUAL_AS400",
       "qmkAliases": [""],
-      "desc": "AS400 Equal sign",
       "usbHidCode": ""
     },
     {
+      "desc": "International 1",
       "qmk": "KC_INTERNATIONAL_1",
       "qmkAliases": ["KC_INT1"],
-      "desc": "International 1",
       "usbHidCode": ""
     },
     {
+      "desc": "International 2",
       "qmk": "KC_INTERNATIONAL_2",
       "qmkAliases": ["KC_INT2"],
-      "desc": "International 2",
       "usbHidCode": ""
     },
     {
+      "desc": "International 3",
       "qmk": "KC_INTERNATIONAL_3",
       "qmkAliases": ["KC_INT3"],
-      "desc": "International 3",
       "usbHidCode": ""
     },
     {
+      "desc": "International 4",
       "qmk": "KC_INTERNATIONAL_4",
       "qmkAliases": ["KC_INT4"],
-      "desc": "International 4",
       "usbHidCode": ""
     },
     {
+      "desc": "International 5",
       "qmk": "KC_INTERNATIONAL_5",
       "qmkAliases": ["KC_INT5"],
-      "desc": "International 5",
       "usbHidCode": ""
     },
     {
+      "desc": "International 6",
       "qmk": "KC_INTERNATIONAL_6",
       "qmkAliases": ["KC_INT6"],
-      "desc": "International 6",
       "usbHidCode": ""
     },
     {
+      "desc": "International 7",
       "qmk": "KC_INTERNATIONAL_7",
       "qmkAliases": ["KC_INT7"],
-      "desc": "International 7",
       "usbHidCode": ""
     },
     {
+      "desc": "International 8",
       "qmk": "KC_INTERNATIONAL_8",
       "qmkAliases": ["KC_INT8"],
-      "desc": "International 8",
       "usbHidCode": ""
     },
     {
+      "desc": "International 9",
       "qmk": "KC_INTERNATIONAL_9",
       "qmkAliases": ["KC_INT9"],
-      "desc": "International 9",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 1",
       "qmk": "KC_LANGUAGE_1",
       "qmkAliases": ["KC_LNG1"],
-      "desc": "Language 1",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 2",
       "qmk": "KC_LANGUAGE_2",
       "qmkAliases": ["KC_LNG2"],
-      "desc": "Language 2",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 3",
       "qmk": "KC_LANGUAGE_3",
       "qmkAliases": ["KC_LNG3"],
-      "desc": "Language 3",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 4",
       "qmk": "KC_LANGUAGE_4",
       "qmkAliases": ["KC_LNG4"],
-      "desc": "Language 4",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 5",
       "qmk": "KC_LANGUAGE_5",
       "qmkAliases": ["KC_LNG5"],
-      "desc": "Language 5",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 6",
       "qmk": "KC_LANGUAGE_6",
       "qmkAliases": ["KC_LNG6"],
-      "desc": "Language 6",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 7",
       "qmk": "KC_LANGUAGE_7",
       "qmkAliases": ["KC_LNG7"],
-      "desc": "Language 7",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 8",
       "qmk": "KC_LANGUAGE_8",
       "qmkAliases": ["KC_LNG8"],
-      "desc": "Language 8",
       "usbHidCode": ""
     },
     {
+      "desc": "Language 9",
       "qmk": "KC_LANGUAGE_9",
       "qmkAliases": ["KC_LNG9"],
-      "desc": "Language 9",
       "usbHidCode": ""
     },
     {
+      "desc": "Alternative Erase",
       "qmk": "KC_ALTERNATE_ERASE",
       "qmkAliases": ["KC_ERAS"],
-      "desc": "Alternative Erase",
       "usbHidCode": ""
     },
     {
+      "desc": "System Request",
       "qmk": "KC_SYSTEM_REQUEST",
       "qmkAliases": ["KC_SYRQ"],
-      "desc": "System Request",
       "usbHidCode": ""
     },
     {
+      "desc": "Cancel",
       "qmk": "KC_CANCEL",
       "qmkAliases": ["KC_CNCL"],
-      "desc": "Cancel",
       "usbHidCode": ""
     },
     {
+      "desc": "Clear",
       "qmk": "KC_CLEAR",
       "qmkAliases": ["KC_CLR"],
-      "desc": "Clear",
       "usbHidCode": ""
     },
     {
+      "desc": "Prior",
       "qmk": "KC_PRIOR",
       "qmkAliases": ["KC_PRIR"],
-      "desc": "Prior",
       "usbHidCode": ""
     },
     {
+      "desc": "Return",
       "qmk": "KC_RETURN",
       "qmkAliases": ["KC_RETN"],
-      "desc": "Return",
       "usbHidCode": ""
     },
     {
+      "desc": "Separator",
       "qmk": "KC_SEPARATOR",
       "qmkAliases": ["KC_SEPR"],
-      "desc": "Separator",
       "usbHidCode": ""
     },
     {
+      "desc": "Out",
       "qmk": "KC_OUT",
       "qmkAliases": [""],
-      "desc": "Out",
       "usbHidCode": ""
     },
     {
+      "desc": "Oper",
       "qmk": "KC_OPER",
       "qmkAliases": [""],
-      "desc": "Oper",
       "usbHidCode": ""
     },
     {
+      "desc": "Clear again",
       "qmk": "KC_CLEAR_AGAIN",
       "qmkAliases": ["KC_CLAG"],
-      "desc": "Clear again",
       "usbHidCode": ""
     },
     {
+      "desc": "Clear Selected",
       "qmk": "KC_CRSEL",
       "qmkAliases": ["KC_CRSL"],
-      "desc": "Clear Selected",
       "usbHidCode": ""
     },
     {
+      "desc": "Exsel",
       "qmk": "KC_EXSEL",
       "qmkAliases": ["KC_EXSL"],
-      "desc": "Exsel",
       "usbHidCode": ""
     },
     {
+      "desc": "Left Ctrl",
+      "js": {
+        "none": {
+          "code": "ControlLeft",
+          "key": "Control",
+          "keyCode": 17
+        }
+      },
       "qmk": "KC_LEFT_CTRL",
       "qmkAliases": ["KC_LCTL"],
-      "desc": "Left Ctrl",
       "usbHidCode": "0xE0"
     },
     {
+      "desc": "Left Shift",
+      "js": {
+        "none": {
+          "code": "ShiftLeft",
+          "key": "Shift",
+          "keyCode": 16
+        }
+      },
       "qmk": "KC_LEFT_SHIFT",
       "qmkAliases": ["KC_LSFT"],
-      "desc": "Left Shift",
       "usbHidCode": "0xE1"
     },
     {
+      "desc": "Left Alt",
+      "js": {
+        "none": {
+          "code": "AltLeft",
+          "key": "Alt",
+          "keyCode": 18
+        }
+      },
       "qmk": "KC_LEFT_ALT",
       "qmkAliases": ["KC_LALT", "KC_LOPT"],
-      "desc": "Left Alt",
       "usbHidCode": "0xE2"
     },
     {
+      "desc": "Left GUI",
+      "js": {
+        "none": {
+          "code": "MetaLeft",
+          "key": "Meta",
+          "keyCode": 91
+        }
+      },
       "qmk": "KC_LEFT_GUI",
       "qmkAliases": ["KC_LGUI", "KC_LCMD", "KC_LWIN"],
-      "desc": "Left GUI",
       "usbHidCode": "0xE3"
     },
     {
+      "desc": "Right Ctrl",
+      "js": {
+        "none": {
+          "code": "ControlRight",
+          "key": "Control",
+          "keyCode": 17
+        }
+      },
       "qmk": "KC_RIGHT_CTRL",
       "qmkAliases": ["KC_RCTL"],
-      "desc": "Right Ctrl",
       "usbHidCode": "0xE4"
     },
     {
+      "desc": "Right Shift",
+      "js": {
+        "none": {
+          "code": "ShiftRight",
+          "key": "Shift",
+          "keyCode": 16
+        }
+      },
       "qmk": "KC_RIGHT_SHIFT",
       "qmkAliases": ["KC_RSFT"],
-      "desc": "Right Shift",
       "usbHidCode": "0xE5"
     },
     {
+      "desc": "Right Alt",
+      "js": {
+        "none": {
+          "code": "AltRight",
+          "key": "AltGraph",
+          "keyCode": 18
+        }
+      },
       "qmk": "KC_RIGHT_ALT",
       "qmkAliases": ["KC_RALT", "KC_ROPT", "KC_ALGR"],
-      "desc": "Right Alt",
       "usbHidCode": "0xE6"
     },
     {
+      "desc": "Right GUI",
+      "js": {
+        "none": {
+          "code": "MetaLeft",
+          "key": "Meta",
+          "keyCode": 91
+        }
+      },
       "qmk": "KC_RIGHT_GUI",
       "qmkAliases": ["KC_RGUI", "KC_RCMD", "KC_RWIN"],
-      "desc": "Right GUI",
       "usbHidCode": "0xE7"
     },
     {
+      "desc": "System Power",
       "qmk": "KC_SYSTEM_POWER",
       "qmkAliases": ["KC_PWR"],
-      "desc": "System Power",
       "usbHidCode": ""
     },
     {
+      "desc": "System Sleep",
       "qmk": "KC_SYSTEM_SLEEP",
       "qmkAliases": ["KC_SLEP"],
-      "desc": "System Sleep",
       "usbHidCode": ""
     },
     {
+      "desc": "System Wake",
       "qmk": "KC_SYSTEM_WAKE",
       "qmkAliases": ["KC_WAKE"],
-      "desc": "System Wake",
       "usbHidCode": ""
     },
     {
+      "desc": "Audio Mute",
       "qmk": "KC_AUDIO_MUTE",
       "qmkAliases": ["KC_MUTE"],
-      "desc": "Audio Mute",
       "usbHidCode": ""
     },
     {
+      "desc": "Volume Up",
       "qmk": "KC_AUDIO_VOL_UP",
       "qmkAliases": ["KC_VOLU"],
-      "desc": "Volume Up",
       "usbHidCode": ""
     },
     {
+      "desc": "Volume Down",
       "qmk": "KC_AUDIO_VOL_DOWN",
       "qmkAliases": ["KC_VOLD"],
-      "desc": "Volume Down",
       "usbHidCode": ""
     },
     {
+      "desc": "Next track",
       "qmk": "KC_MEDIA_NEXT_TRACK",
       "qmkAliases": ["KC_MNXT"],
-      "desc": "Next track",
       "usbHidCode": ""
     },
     {
+      "desc": "Previous Track",
       "qmk": "KC_MEDIA_PREV_TRACK",
       "qmkAliases": ["KC_MPRV"],
-      "desc": "Previous Track",
       "usbHidCode": ""
     },
     {
+      "desc": "Media Stop",
       "qmk": "KC_MEDIA_STOP",
       "qmkAliases": ["KC_MSTP"],
-      "desc": "Media Stop",
       "usbHidCode": ""
     },
     {
+      "desc": "Play/Pause",
       "qmk": "KC_MEDIA_PLAY_PAUSE",
       "qmkAliases": ["KC_MPLY"],
-      "desc": "Play/Pause",
       "usbHidCode": ""
     },
     {
+      "desc": "Media Select",
       "qmk": "KC_MEDIA_SELECT",
       "qmkAliases": ["KC_MSEL"],
-      "desc": "Media Select",
       "usbHidCode": ""
     },
     {
+      "desc": "Media Eject",
       "qmk": "KC_MEDIA_EJECT",
       "qmkAliases": ["KC_EJCT"],
-      "desc": "Media Eject",
       "usbHidCode": ""
     },
     {
+      "desc": "Mail",
       "qmk": "KC_MAIL",
       "qmkAliases": [""],
-      "desc": "Mail",
       "usbHidCode": ""
     },
     {
+      "desc": "Calculator",
       "qmk": "KC_CALCULATOR",
       "qmkAliases": ["KC_CALC"],
-      "desc": "Calculator",
       "usbHidCode": ""
     },
     {
+      "desc": "My Computer",
       "qmk": "KC_MY_COMPUTER",
       "qmkAliases": ["KC_MYCM"],
-      "desc": "My Computer",
       "usbHidCode": ""
     },
     {
+      "desc": "WWW Search",
       "qmk": "KC_WWW_SEARCH",
       "qmkAliases": ["KC_WSCH"],
-      "desc": "WWW Search",
       "usbHidCode": ""
     },
     {
+      "desc": "WWW Home",
       "qmk": "KC_WWW_HOME",
       "qmkAliases": ["KC_WHOM"],
-      "desc": "WWW Home",
       "usbHidCode": ""
     },
     {
+      "desc": "WWW Back",
       "qmk": "KC_WWW_BACK",
       "qmkAliases": ["KC_WBAK"],
-      "desc": "WWW Back",
       "usbHidCode": ""
     },
     {
+      "desc": "WWW Forward",
       "qmk": "KC_WWW_FORWARD",
       "qmkAliases": ["KC_WFWD"],
-      "desc": "WWW Forward",
       "usbHidCode": ""
     },
     {
+      "desc": "WWW Stop",
       "qmk": "KC_WWW_STOP",
       "qmkAliases": ["KC_WSTP"],
-      "desc": "WWW Stop",
       "usbHidCode": ""
     },
     {
+      "desc": "WWW Refresh",
       "qmk": "KC_WWW_REFRESH",
       "qmkAliases": ["KC_WREF"],
-      "desc": "WWW Refresh",
       "usbHidCode": ""
     },
     {
+      "desc": "WWW Favorites",
       "qmk": "KC_WWW_FAVORITES",
       "qmkAliases": ["KC_WFAV"],
-      "desc": "WWW Favorites",
       "usbHidCode": ""
     },
     {
+      "desc": "Media Fast Forward",
       "qmk": "KC_MEDIA_FAST_FORWARD",
       "qmkAliases": ["KC_MFFD"],
-      "desc": "Media Fast Forward",
       "usbHidCode": ""
     },
     {
+      "desc": "Media Rewind",
       "qmk": "KC_MEDIA_REWIND",
       "qmkAliases": ["KC_MRWD"],
-      "desc": "Media Rewind",
       "usbHidCode": ""
     },
     {
+      "desc": "Brightness Up",
       "qmk": "KC_BRIGHTNESS_UP",
       "qmkAliases": ["KC_BRIU"],
-      "desc": "Brightness Up",
       "usbHidCode": ""
     },
     {
+      "desc": "Brightness Down",
       "qmk": "KC_BRIGHTNESS_DOWN",
       "qmkAliases": ["KC_BRID"],
-      "desc": "Brightness Down",
       "usbHidCode": ""
     },
     {
+      "desc": "Control Panel",
       "qmk": "KC_CONTROL_PANEL",
       "qmkAliases": ["KC_CPNL"],
-      "desc": "Control Panel",
       "usbHidCode": ""
     },
     {
+      "desc": "Assistant",
       "qmk": "KC_ASSISTANT",
       "qmkAliases": ["KC_ASST"],
-      "desc": "Assistant",
       "usbHidCode": ""
     },
     {
+      "desc": "Mission Control",
       "qmk": "KC_MISSION_CONTROL",
       "qmkAliases": ["KC_MCTL"],
-      "desc": "Mission Control",
       "usbHidCode": ""
     },
     {
+      "desc": "Launchpad",
       "qmk": "KC_LAUNCHPAD",
       "qmkAliases": ["KC_LPAD"],
-      "desc": "Launchpad",
       "usbHidCode": ""
     }
-  ]
+  ],
+  "sources": ["https://docs.qmk.fm/keycodes", "https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/keycode.py", "https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/consumer_control_code.py"]
 }
