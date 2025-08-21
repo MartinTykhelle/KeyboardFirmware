@@ -1,0 +1,49 @@
+{
+    "bindings":[[
+        {"keyCode":"ONE", "modifier":"C"},
+        {"keyCode":"TWO", "modifier":"C"},
+        {"keyCode":"THREE", "modifier":"C"},
+        {"keyCode":"FOUR", "modifier":"C"},
+        {"keyCode":"FIVE", "modifier":"C"},
+        {"keyCode":"SIX", "modifier":"C"},
+        {"keyCode":"SEVEN", "modifier":"C"},
+        {"keyCode":"EIGHT", "modifier":"C"}
+],[
+        {"keyCode":"ONE", "modifier":"S"},
+        {"keyCode":"TWO", "modifier":"S"},
+        {"keyCode":"THREE", "modifier":"S"},
+        {"keyCode":"FOUR", "modifier":"S"},
+        {"keyCode":"FIVE", "modifier":"S"},
+        {"keyCode":"SIX(", "modifier":"S"},
+        {"keyCode":"SEVEN", "modifier":"S"},
+        {"keyCode":"EIGHT", "modifier":"S"}
+],[
+        {"keyCode":"ONE"},
+        {"keyCode":"TWO"},
+        {"keyCode":"THREE"},
+        {"keyCode":"FOUR"},
+        {"keyCode":"FIVE"},
+        {"keyCode":"SIX"},
+        {"keyCode":"SEVEN"},
+        {"keyCode":"EIGHT"}
+],[
+        {"keyCode":"TAB"},
+        {"keyCode":"Q"},    
+        {"keyCode":"E"},
+        {"keyCode":"A"},
+        {"keyCode":"W"},
+        {"keyCode":"D"},
+        {"keyCode":"R"},
+        {"keyCode":"T"}
+],[
+        {"keyCode":"TAB", "modifier":"S"},
+        {"keyCode":"Q", "modifier":"S"},
+        {"keyCode":"E", "modifier":"S"},
+        {"keyCode":"SPACEBAR"},
+        {"keyCode":"S"},
+        {"keyCode":"SPACEBAR"},
+        {"keyCode":"R", "modifier":"S"},
+        {"keyCode":"T", "modifier":"S"}
+]
+]
+}
