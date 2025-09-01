@@ -1,17 +1,17 @@
 <script>
-  import { db, newLayout } from "./db";
-  import { currentLayoutId } from "./stores";
+  import { db, newLayout, loadLayout } from "./db";
+  import { currentLayoutId, currentLayout } from "./stores";
 
   let layoutSetting = {
     layoutName: "",
     rows: 5,
     columns: 8,
   };
-  //save currentLayoutId to a store
-  function createNewLayout() {
-    newLayout(layoutSetting).then((layoutId) => {
-      console.log(layoutId);
+
+  async function createNewLayout() {
+    newLayout(layoutSetting).then(async (layoutId) => {
       $currentLayoutId = layoutId;
+      $currentLayout = await loadLayout($currentLayoutId);
     });
   }
 </script>
