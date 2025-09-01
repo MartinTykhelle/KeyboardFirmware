@@ -20,14 +20,12 @@
   async function refreshLayout() {
     $currentLayout = await loadLayout($currentLayoutId);
     $currentKey = undefined;
-    console.log($conversion);
   }
   //sidebar component
   let widths = [0.5, 0.75, 1, 2, 3, 4, 5, 6, 7];
 
   async function onWidth() {
     $currentLayout = $currentLayout;
-    console.log($currentLayout);
   }
 </script>
 

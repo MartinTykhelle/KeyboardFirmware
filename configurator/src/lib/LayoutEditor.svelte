@@ -5,7 +5,7 @@
 
   let currentRowIdx;
   let currentColIdx;
-  function getNextKey() {
+  async function getNextKey() {
     //Check if we're skipping to the next row
     currentColIdx++;
     if (currentColIdx > $currentLayout.keys[currentRowIdx].length - 1) {
@@ -17,20 +17,22 @@
     if (currentRowIdx > $currentLayout.keys.length - 1) {
       currentRowIdx = 0;
     }
-    console.log($currentLayout.keys[currentRowIdx][currentColIdx]);
-    $currentKey = $currentLayout.keys[currentRowIdx][currentColIdx];
+
+    setTimeout(() => {
+      $currentKey = $currentLayout.keys[currentRowIdx][currentColIdx];
+    }, 200);
   }
-  function onKeyClick(key, rowIdx, colIdx) {
+  async function onKeyClick(key, rowIdx, colIdx) {
     $currentKey = key;
     currentRowIdx = rowIdx;
     currentColIdx = colIdx;
   }
-  function mapKeyFromMap(event) {
-    let modifier = getModifier();
+  async function mapKeyFromMap(event) {
+    let modifier = await getModifier();
     let foundKey = $conversion.filter((key) => {
       return key.js?.[modifier]?.key.toLowerCase() === event.key.toLowerCase();
     });
-    console.log(foundKey[0]);
+
     //flatten the shit out of this
     if (foundKey[0]) {
       $currentKey.key = foundKey[0].js?.[modifier]?.key;
@@ -40,10 +42,10 @@
       $currentKey.qmk = foundKey[0].qmk;
       $currentKey.desc = foundKey[0].desc;
       $currentKey.modifier = modifier;
-      getNextKey();
+      await getNextKey();
     }
   }
-  function getModifier() {
+  async function getModifier() {
     if (modKeys.shift) {
       return "shift";
     }
@@ -60,7 +62,7 @@
   }
 
   let modKeys = {};
-  function onKeyRelease(event) {
+  async function onKeyRelease(event) {
     event.preventDefault();
     if (event.key === "Shift") {
       modKeys.shift = false;
@@ -74,14 +76,14 @@
 
     //if no key registered, assume the modifier is the key
     if ($currentKey.key === undefined) {
-      mapKeyFromMap(event);
+      await mapKeyFromMap(event);
     }
   }
-  function onKeyPress(event) {
+  async function onKeyPress(event) {
     //Figure out if a modifier is pressed
     //let modifier = "none";
     event.preventDefault();
-    console.log(event.key);
+
     if (event.key === "Shift") {
       modKeys.shift = true;
     } else if (event.key === "Alt") {
@@ -91,9 +93,8 @@
     } else if (event.key === "AltGraph") {
       modKeys.altGr = true;
     } else {
-      mapKeyFromMap(event);
+      await mapKeyFromMap(event);
     }
-    console.log($currentKey);
   }
 </script>
 
