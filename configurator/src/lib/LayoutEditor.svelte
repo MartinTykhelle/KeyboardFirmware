@@ -42,7 +42,6 @@
       $currentKey.qmk = foundKey[0].qmk;
       $currentKey.desc = foundKey[0].desc;
       $currentKey.modifier = modifier;
-      await getNextKey();
     }
   }
   async function getModifier() {
@@ -72,6 +71,8 @@
       modKeys.ctrl = false;
     } else if (event.key === "AltGraph") {
       modKeys.altGr = false;
+    } else {
+      await getNextKey();
     }
 
     //if no key registered, assume the modifier is the key
