@@ -1,25 +1,25 @@
 <script>
-  import { db, loadLayout } from "./db";
-  import { liveQuery } from "dexie";
-  import { currentKey, currentLayout, conversion } from "./stores";
+  import { db, loadLayout, saveLayout } from './db';
+  import { liveQuery } from 'dexie';
+  import { currentKey, currentLayout, conversion, currentLayer } from './stores';
 
   let currentRowIdx;
   let currentColIdx;
   async function getNextKey() {
     //Check if we're skipping to the next row
     currentColIdx++;
-    if (currentColIdx > $currentLayout.keys[currentRowIdx].length - 1) {
+    if (currentColIdx > $currentLayer[currentRowIdx].length - 1) {
       currentColIdx = 0;
       currentRowIdx++;
     }
 
     //if overflow of the row idx skip back to 0
-    if (currentRowIdx > $currentLayout.keys.length - 1) {
+    if (currentRowIdx > $currentLayer.length - 1) {
       currentRowIdx = 0;
     }
 
     setTimeout(() => {
-      $currentKey = $currentLayout.keys[currentRowIdx][currentColIdx];
+      $currentKey = $currentLayer[currentRowIdx][currentColIdx];
     }, 200);
   }
   async function onKeyClick(key, rowIdx, colIdx) {
@@ -42,34 +42,35 @@
       $currentKey.qmk = foundKey[0].qmk;
       $currentKey.desc = foundKey[0].desc;
       $currentKey.modifier = modifier;
+      await saveLayout($currentLayout.layoutId, $currentLayout);
     }
   }
   async function getModifier() {
     if (modKeys.shift) {
-      return "shift";
+      return 'shift';
     }
     if (modKeys.altGr) {
-      return "altGr";
+      return 'altGr';
     }
     if (modKeys.alt) {
-      return "alt";
+      return 'alt';
     }
     if (modKeys.ctrl) {
-      return "ctrl";
+      return 'ctrl';
     }
-    return "none";
+    return 'none';
   }
 
   let modKeys = {};
   async function onKeyRelease(event) {
     event.preventDefault();
-    if (event.key === "Shift") {
+    if (event.key === 'Shift') {
       modKeys.shift = false;
-    } else if (event.key === "Alt") {
+    } else if (event.key === 'Alt') {
       modKeys.alt = false;
-    } else if (event.key === "Control") {
+    } else if (event.key === 'Control') {
       modKeys.ctrl = false;
-    } else if (event.key === "AltGraph") {
+    } else if (event.key === 'AltGraph') {
       modKeys.altGr = false;
     } else {
       await getNextKey();
@@ -85,13 +86,13 @@
     //let modifier = "none";
     event.preventDefault();
 
-    if (event.key === "Shift") {
+    if (event.key === 'Shift') {
       modKeys.shift = true;
-    } else if (event.key === "Alt") {
+    } else if (event.key === 'Alt') {
       modKeys.alt = true;
-    } else if (event.key === "Control") {
+    } else if (event.key === 'Control') {
       modKeys.ctrl = true;
-    } else if (event.key === "AltGraph") {
+    } else if (event.key === 'AltGraph') {
       modKeys.altGr = true;
     } else {
       await mapKeyFromMap(event);
@@ -100,20 +101,13 @@
 </script>
 
 <div class="layout">
-  {#if $currentLayout}
-    {#each $currentLayout.keys as row, rowIdx}
+  {#if $currentLayer}
+    {#each $currentLayer as row, rowIdx}
       <div class="row">
         {#each row as key, colIdx}
-          <!-- svelte-ignore a11y_no_static_element_interactions -->
-          <button
-            class="key width-{('' + key.width).replace('.', '')}u {key ===
-            $currentKey
-              ? 'current'
-              : ''} "
-            on:click={() => onKeyClick(key, rowIdx, colIdx)}
-            on:keydown={onKeyPress}
-            on:keyup={onKeyRelease}
-          >
+          <!-- svelte-ignore a11y_no_static_element_interactions  -->
+          <!-- If key is not set, find the key of the lower layer -->
+          <button class="key width-{('' + key.width).replace('.', '')}u {key === $currentKey ? 'current' : ''} " on:click={() => onKeyClick(key, rowIdx, colIdx)} on:keydown={onKeyPress} on:keyup={onKeyRelease}>
             {key.key}
           </button>
         {/each}

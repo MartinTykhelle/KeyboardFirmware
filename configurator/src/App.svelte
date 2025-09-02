@@ -1,24 +1,22 @@
 <script>
-  import LayoutEditor from "./lib/LayoutEditor.svelte";
-  import Settings from "./lib/Settings.svelte";
-  import { db, loadLayout } from "./lib/db";
-  import {
-    currentLayoutId,
-    currentKey,
-    currentLayout,
-    conversion,
-  } from "./lib/stores";
-  import { liveQuery } from "dexie";
-  import conv from "./lib/conversion.json";
+  import LayoutEditor from './lib/LayoutEditor.svelte';
+  import Settings from './lib/Settings.svelte';
+  import { db, loadLayout } from './lib/db';
+  import { currentLayoutId, currentLayerId, currentKey, currentLayout, conversion, currentLayer } from './lib/stores';
+  import { liveQuery } from 'dexie';
+  import conv from './lib/conversion.json';
 
   let settings = $state();
   $currentLayoutId = 0;
+  $currentLayerId = 0;
   $currentKey = undefined;
   $conversion = conv.keys;
 
-  let keyboardLayouts = liveQuery(() => db.table("layout").toArray());
+  let keyboardLayouts = liveQuery(() => db.table('layout').toArray());
   async function refreshLayout() {
     $currentLayout = await loadLayout($currentLayoutId);
+    $currentLayer = $currentLayout.layers[$currentLayerId];
+    console.log($currentLayer);
     $currentKey = undefined;
   }
   //sidebar component
@@ -26,6 +24,7 @@
 
   async function onWidth() {
     $currentLayout = $currentLayout;
+    $currentLayer = $currentLayer;
   }
 </script>
 
@@ -39,11 +38,21 @@
           <option value={layout.layoutId}> {layout.layoutName}</option>
         {/each}
       </select>
+      <div>
+        {#if $currentLayoutId}
+          Layer:
+          <select bind:value={$currentLayerId} onchange={refreshLayout}>
+            {#each $currentLayout.layers as layer, layerIdx}
+              <option value={layerIdx}> {layerIdx}</option>
+            {/each}
+          </select>
+        {/if}
 
-      {#if $currentKey}
-        <div>
+        {#if $currentKey}
           <!---- Component this shizzle-->
+
           <div>
+            <!--- Width should be moved from key to a new array so it's propagated through the layers-->
             Width:
             <select bind:value={$currentKey.width} onchange={onWidth}>
               {#each widths as width}
@@ -60,8 +69,8 @@
           <div>Modifier:{$currentKey?.modifier}</div>
           <!--- Delete key-->
           <!--- Null out key-->
-        </div>
-      {/if}
+        {/if}
+      </div>
     </div>
     {#if !$currentLayoutId}
       <Settings bind:this={settings}></Settings>
