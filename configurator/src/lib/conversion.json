@@ -2324,6 +2324,22 @@
       "qmk": "KC_LAUNCHPAD",
       "qmkAliases": ["KC_LPAD"],
       "usbHidCode": ""
+    },
+    {
+      "desc": "Layer 1",
+      "layer":1
+    },
+    {
+      "desc": "Layer 2",
+      "layer":2
+    },
+    {
+      "desc": "Layer 3",
+      "layer":4
+    },
+    {
+      "desc": "Layer 4",
+      "layer":8
     }
   ],
   "sources": ["https://docs.qmk.fm/keycodes", "https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/keycode.py", "https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/consumer_control_code.py"]

@@ -1,7 +1,12 @@
 <script>
-  import { db, loadLayout, saveLayout } from './db';
-  import { liveQuery } from 'dexie';
-  import { currentKey, currentLayout, conversion, currentLayer } from './stores';
+  import { saveLayout } from "./db";
+  import {
+    currentKey,
+    currentLayout,
+    conversion,
+    currentLayer,
+    currentLayerId,
+  } from "./stores";
 
   let currentRowIdx;
   let currentColIdx;
@@ -47,30 +52,30 @@
   }
   async function getModifier() {
     if (modKeys.shift) {
-      return 'shift';
+      return "shift";
     }
     if (modKeys.altGr) {
-      return 'altGr';
+      return "altGr";
     }
     if (modKeys.alt) {
-      return 'alt';
+      return "alt";
     }
     if (modKeys.ctrl) {
-      return 'ctrl';
+      return "ctrl";
     }
-    return 'none';
+    return "none";
   }
 
   let modKeys = {};
   async function onKeyRelease(event) {
     event.preventDefault();
-    if (event.key === 'Shift') {
+    if (event.key === "Shift") {
       modKeys.shift = false;
-    } else if (event.key === 'Alt') {
+    } else if (event.key === "Alt") {
       modKeys.alt = false;
-    } else if (event.key === 'Control') {
+    } else if (event.key === "Control") {
       modKeys.ctrl = false;
-    } else if (event.key === 'AltGraph') {
+    } else if (event.key === "AltGraph") {
       modKeys.altGr = false;
     } else {
       await getNextKey();
@@ -86,13 +91,13 @@
     //let modifier = "none";
     event.preventDefault();
 
-    if (event.key === 'Shift') {
+    if (event.key === "Shift") {
       modKeys.shift = true;
-    } else if (event.key === 'Alt') {
+    } else if (event.key === "Alt") {
       modKeys.alt = true;
-    } else if (event.key === 'Control') {
+    } else if (event.key === "Control") {
       modKeys.ctrl = true;
-    } else if (event.key === 'AltGraph') {
+    } else if (event.key === "AltGraph") {
       modKeys.altGr = true;
     } else {
       await mapKeyFromMap(event);
@@ -107,8 +112,20 @@
         {#each row as key, colIdx}
           <!-- svelte-ignore a11y_no_static_element_interactions  -->
           <!-- If key is not set, find the key of the lower layer -->
-          <button class="key width-{('' + key.width).replace('.', '')}u {key === $currentKey ? 'current' : ''} " on:click={() => onKeyClick(key, rowIdx, colIdx)} on:keydown={onKeyPress} on:keyup={onKeyRelease}>
-            {key.key}
+          <button
+            class="key width-{('' + key.width).replace('.', '')}u {key ===
+            $currentKey
+              ? 'current'
+              : ''} "
+            on:click={() => onKeyClick(key, rowIdx, colIdx)}
+            on:keydown={onKeyPress}
+            on:keyup={onKeyRelease}
+          >
+            <span class={key.usesLower ? "lower" : ""}
+              >{key.usesLower
+                ? (key?.lowerKey?.key ?? key?.lowerKey?.desc)
+                : (key.key ?? key.desc)}</span
+            >
           </button>
         {/each}
       </div>
@@ -164,5 +181,8 @@
   }
   .current {
     border-color: blue;
+  }
+  .lower {
+    color: #999999;
   }
 </style>

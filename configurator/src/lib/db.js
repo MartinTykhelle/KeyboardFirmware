@@ -1,9 +1,9 @@
-import Dexie from 'dexie';
+import Dexie from "dexie";
 
-export const db = new Dexie('keyboardConfigurator');
+export const db = new Dexie("keyboardConfigurator");
 db.version(1).stores({
-  conversion: '++id, qmk, jsCode',
-  layout: '++layoutId, layoutName',
+  conversion: "++id, qmk, jsCode",
+  layout: "++layoutId, layoutName",
 });
 
 export async function newLayout(layout) {
@@ -24,17 +24,21 @@ export async function newLayout(layout) {
     layout.layers.push(keys);
   }
 
-  return await db.table('layout').add(layout);
+  return await db.table("layout").add(layout);
 }
 
 export async function saveLayout(layoutId, layout) {
-  return await db.table('layout').update(layoutId, layout);
+  return await db.table("layout").update(layoutId, layout);
 }
 
 export async function loadLayout(layoutId) {
-  return (await db.table('layout').where('layoutId').equals(layoutId).toArray())[0] ?? [];
+  return (
+    (
+      await db.table("layout").where("layoutId").equals(layoutId).toArray()
+    )[0] ?? {}
+  );
 }
 
 export async function loadLayouts() {
-  return await db.table('layout').toArray();
+  return await db.table("layout").toArray();
 }
