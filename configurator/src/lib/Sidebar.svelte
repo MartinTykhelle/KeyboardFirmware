@@ -94,7 +94,7 @@
 
 <div>
   <AttrPair>
-    <span slot="label">Layout:</span>
+    <span slot="label">Layout</span>
     <span slot="content">
       <select bind:value={$currentLayoutId} onchange={refreshLayout}>
         <option value={0} selected> New</option>
@@ -106,7 +106,7 @@
   </AttrPair>
   {#if $currentLayoutId > 0 && $currentLayout}
     <AttrPair>
-      <span slot="label">Layer:</span>
+      <span slot="label">Layer</span>
       <span slot="content">
         <select bind:value={$currentLayerId}>
           {#each $currentLayout.layers as layer, layerIdx}
@@ -125,7 +125,7 @@
       <!-- hold / tap logic maybe too-->
 
       <AttrPair>
-        <span slot="label"> Width:</span>
+        <span slot="label"> Width</span>
         <span slot="content">
           <select bind:value={$currentKey.width} onchange={onWidth}>
             {#each widths as width}
