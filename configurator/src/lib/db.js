@@ -9,20 +9,30 @@ db.version(1).stores({
 export async function newLayout(layout) {
   layout.layoutId = undefined;
   layout.layers = [];
-  console.log(layout);
-  console.log(layout.layerCount);
-  for (let layerIdx = 0; layerIdx < layout.layerCount; layerIdx++) {
-    let keys = [];
+  let keys = [];
 
+  for (let layerIdx = 0; layerIdx < layout.layerCount; layerIdx++) {
+    keys = [];
     for (let rowId = 0; rowId < layout.rows; rowId++) {
       let row = [];
       for (let columnId = 0; columnId < layout.columns; columnId++) {
-        row.push({ width: 1 });
+        row.push({});
       }
       keys.push(row);
     }
     layout.layers.push(keys);
   }
+
+  keys = [];
+
+  for (let rowId = 0; rowId < layout.rows; rowId++) {
+    let row = [];
+    for (let columnId = 0; columnId < layout.columns; columnId++) {
+      row.push({ width: 1 });
+    }
+    keys.push(row);
+  }
+  layout.layout = keys;
 
   return await db.table("layout").add(layout);
 }

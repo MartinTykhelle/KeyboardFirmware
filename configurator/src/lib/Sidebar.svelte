@@ -6,10 +6,11 @@
     currentLayout,
     currentLayer,
     conversion,
+    currentRowIdx,
+    currentColIdx,
   } from "./stores";
   import { db, saveLayout, loadLayout } from "./db.js";
   import { liveQuery } from "dexie";
-  import AttrPair from "./AttrPair.svelte";
 
   let keyboardLayouts = liveQuery(() => db.table("layout").toArray());
   //sidebar component
@@ -26,6 +27,7 @@
   async function onWidth() {
     $currentLayout = $currentLayout;
     $currentLayer = $currentLayer;
+    await saveLayout($currentLayout.layoutId, $currentLayout);
   }
 
   async function setCurrentKey() {
@@ -90,113 +92,138 @@
     }
     $currentKey = undefined;
   }
+  async function deleteKey() {
+    console.log($currentLayout);
+  }
+  async function unsetKey() {
+    //$currentKey = { lowerKey: $currentKey.lowerKey };
+    console.log($currentLayout);
+    //await saveLayout($currentLayout.layoutId, $currentLayout);
+  }
 </script>
 
-<div>
-  <AttrPair>
-    <span slot="label">Layout</span>
-    <span slot="content">
-      <select bind:value={$currentLayoutId} onchange={refreshLayout}>
-        <option value={0} selected> New</option>
-        {#each $keyboardLayouts || [] as layout (layout.layoutId)}
-          <option value={layout.layoutId}> {layout.layoutName}</option>
-        {/each}
-      </select>
-    </span>
-  </AttrPair>
-  {#if $currentLayoutId > 0 && $currentLayout}
-    <AttrPair>
-      <span slot="label">Layer</span>
-      <span slot="content">
-        <select bind:value={$currentLayerId}>
-          {#each $currentLayout.layers as layer, layerIdx}
-            <option value={layerIdx}> {layerIdx}</option>
+<table>
+  <tbody>
+    <tr>
+      <td>Layout</td>
+      <td>
+        <select bind:value={$currentLayoutId} onchange={refreshLayout}>
+          <option value={0} selected> New</option>
+          {#each $keyboardLayouts || [] as layout (layout.layoutId)}
+            <option value={layout.layoutId}> {layout.layoutName}</option>
           {/each}
         </select>
-      </span>
-    </AttrPair>
-  {/if}
-
-  {#if $currentKey}
-    <div>
-      <!--- Width should be moved from key to a new array so it's propagated through the layers-->
-      <!--  Delete should delete both the element in the new array and in the layer-->
-      <!-- layer modifiers should also be part of the outside array as they propagate all layers-->
-      <!-- hold / tap logic maybe too-->
-
-      <AttrPair>
-        <span slot="label"> Width</span>
-        <span slot="content">
-          <select bind:value={$currentKey.width} onchange={onWidth}>
+      </td>
+    </tr>
+    {#if $currentLayoutId > 0 && $currentLayout}
+      <tr>
+        <td>Layer</td>
+        <td>
+          <select bind:value={$currentLayerId}>
+            {#each $currentLayout.layers as layer, layerIdx}
+              <option value={layerIdx}> {layerIdx}</option>
+            {/each}
+          </select>
+        </td>
+      </tr>
+    {/if}
+    {#if $currentKey}
+      <tr>
+        <td>Width</td>
+        <td>
+          <select
+            bind:value={
+              $currentLayout.layout[$currentRowIdx][$currentColIdx].width
+            }
+            onchange={onWidth}
+          >
             {#each widths as width}
               <option value={width}>{width}</option>
             {/each}
           </select>
-        </span>
-      </AttrPair>
-    </div>
-    <!-- This should be some sort of grid probably-->
-
-    {#if $currentKey.usesLower}
-      <AttrPair>
-        <span slot="label">Key from lower layer</span>
-      </AttrPair>
-      <AttrPair>
-        <span slot="label">Desc</span>
-        <span slot="content">{$currentKey.lowerKey.desc}</span>
-      </AttrPair>
-    {:else}
-      <AttrPair>
-        <span slot="label">Desc</span>
-        <span slot="content">{$currentKey.desc}</span>
-      </AttrPair>
-      <AttrPair>
-        <span slot="label">Key</span>
-        <span slot="content">{$currentKey?.key}</span>
-      </AttrPair>
-      <AttrPair>
-        <span slot="label">Code</span>
-        <span slot="content">{$currentKey?.code}</span>
-      </AttrPair>
-      <AttrPair>
-        <span slot="label">KeyCode</span>
-        <span slot="content">{$currentKey?.keyCode}</span>
-      </AttrPair>
-      <AttrPair>
-        <span slot="label">HID</span>
-        <span slot="content">{$currentKey?.usbHidCode}</span>
-      </AttrPair>
-      <AttrPair>
-        <span slot="label">QMK</span>
-        <span slot="content">{$currentKey?.qmk}</span>
-      </AttrPair>
-      <AttrPair>
-        <span slot="label">Modifier</span>
-        <span slot="content">{$currentKey?.modifier}</span>
-      </AttrPair>
-      <AttrPair>
-        <span slot="label"> Manual</span>
-        <span slot="content">
-          <select bind:value={modifier}>
-            {#each modifiers as mod}
-              <option value={mod.r}>{mod.d}</option>
-            {/each}
-          </select>
-          <select bind:value={convIdx} onchange={setCurrentKey}>
-            {#each $conversion as conv, idx}
-              <option value={idx}>{conv.desc}</option>
-            {/each}
-          </select>
-        </span>
-      </AttrPair>
+        </td>
+      </tr>
+      {#if $currentKey.usesLower}
+        <tr>
+          <td colspan="2">Key from lower layer</td>
+        </tr>
+        <tr>
+          <td>Desc</td>
+          <td>{$currentKey.lowerKey.desc}</td>
+        </tr>
+      {:else}
+        <tr>
+          <td>Desc</td>
+          <td>{$currentKey.desc}</td>
+        </tr>
+        <tr>
+          <td>Key</td>
+          <td>{$currentKey?.key}</td>
+        </tr>
+        <tr>
+          <td>Code</td>
+          <td>{$currentKey?.code}</td>
+        </tr>
+        <tr>
+          <td>KeyCode</td>
+          <td>{$currentKey?.keyCode}</td>
+        </tr>
+        <tr>
+          <td>HID</td>
+          <td>{$currentKey?.usbHidCode}</td>
+        </tr>
+        <tr>
+          <td>QMK</td>
+          <td>{$currentKey?.qmk}</td>
+        </tr>
+        <tr>
+          <td>Modifier</td>
+          <td>{$currentKey?.modifier}</td>
+        </tr>
+        <tr>
+          <td>Manual</td>
+          <td>
+            <select bind:value={modifier}>
+              {#each modifiers as mod}
+                <option value={mod.r}>{mod.d}</option>
+              {/each}
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <select bind:value={convIdx} onchange={setCurrentKey}>
+              {#each $conversion as conv, idx}
+                <option value={idx}>{conv.desc}</option>
+              {/each}
+            </select>
+          </td>
+        </tr>
+      {/if}
+      <tr>
+        <td colspan="2"><button onclick={deleteKey}>Delete Key</button></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button onclick={unsetKey}>Unset Key</button></td>
+      </tr>
     {/if}
-    <!--- Delete key-->
-    <!--- Null out key-->
-  {/if}
-</div>
+  </tbody>
+</table>
+
+<!--  Delete should delete both the element in the new array and in the layer-->
+<!-- layer modifiers should also be part of the outside array as they propagate all layers-->
+<!-- hold / tap logic maybe too-->
 
 <style>
   select {
-    width: 80%;
+    width: 96%;
+  }
+
+  table {
+    width: 100%;
+  }
+  td:nth-child(1) {
+    width: 30%;
   }
 </style>

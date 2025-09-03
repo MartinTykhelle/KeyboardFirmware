@@ -6,32 +6,33 @@
     conversion,
     currentLayer,
     currentLayerId,
+    currentRowIdx,
+    currentColIdx,
   } from "./stores";
 
-  let currentRowIdx;
-  let currentColIdx;
   async function getNextKey() {
     //Check if we're skipping to the next row
-    currentColIdx++;
-    if (currentColIdx > $currentLayer[currentRowIdx].length - 1) {
-      currentColIdx = 0;
-      currentRowIdx++;
+    $currentColIdx++;
+    if ($currentColIdx > $currentLayer[$currentRowIdx].length - 1) {
+      $currentColIdx = 0;
+      $currentRowIdx++;
     }
-
     //if overflow of the row idx skip back to 0
-    if (currentRowIdx > $currentLayer.length - 1) {
-      currentRowIdx = 0;
+    if ($currentRowIdx > $currentLayer.length - 1) {
+      $currentRowIdx = 0;
     }
 
     setTimeout(() => {
-      $currentKey = $currentLayer[currentRowIdx][currentColIdx];
+      $currentKey = $currentLayer[$currentRowIdx][$currentColIdx];
     }, 200);
   }
+
   async function onKeyClick(key, rowIdx, colIdx) {
+    $currentRowIdx = rowIdx;
+    $currentColIdx = colIdx;
     $currentKey = key;
-    currentRowIdx = rowIdx;
-    currentColIdx = colIdx;
   }
+
   async function mapKeyFromMap(event) {
     let modifier = await getModifier();
     let foundKey = $conversion.filter((key) => {
@@ -47,6 +48,7 @@
       $currentKey.qmk = foundKey[0].qmk;
       $currentKey.desc = foundKey[0].desc;
       $currentKey.modifier = modifier;
+      $currentKey.usesLower = false;
       await saveLayout($currentLayout.layoutId, $currentLayout);
     }
   }
@@ -111,12 +113,10 @@
       <div class="row">
         {#each row as key, colIdx}
           <!-- svelte-ignore a11y_no_static_element_interactions  -->
-          <!-- If key is not set, find the key of the lower layer -->
           <button
-            class="key width-{('' + key.width).replace('.', '')}u {key ===
-            $currentKey
-              ? 'current'
-              : ''} "
+            class="key width-{(
+              '' + $currentLayout.layout[rowIdx][colIdx]?.width
+            ).replace('.', '')}u {key === $currentKey ? 'current' : ''} "
             on:click={() => onKeyClick(key, rowIdx, colIdx)}
             on:keydown={onKeyPress}
             on:keyup={onKeyRelease}
@@ -154,22 +154,22 @@
     width: 64px;
   }
   .width-2u {
-    width: 128px;
+    width: 130px;
   }
   .width-3u {
     width: 196px;
   }
   .width-4u {
-    width: 266px;
+    width: 262px;
   }
   .width-5u {
     width: 328px;
   }
   .width-6u {
-    width: 400px;
+    width: 394px;
   }
   .width-7u {
-    width: 468px;
+    width: 460px;
   }
   .row {
     display: flex;

@@ -1,7 +1,6 @@
 <script>
   import { db, newLayout, loadLayout } from "./db";
   import { currentLayoutId, currentLayout } from "./stores";
-  import AttrPair from "./AttrPair.svelte";
 
   let layoutSetting = {
     layoutName: "",
@@ -18,47 +17,41 @@
   }
 </script>
 
-<div class="flex-vertical">
-  <AttrPair>
-    <span slot="label">Name</span>
-    <span slot="content">
-      <input
-        bind:value={layoutSetting.layoutName}
-        type="text"
-        placeholder="Layout Name"
-      />
-    </span>
-  </AttrPair>
-  <AttrPair>
-    <span slot="label">Rows</span>
-    <span slot="content"
-      ><input bind:value={layoutSetting.rows} type="number" /></span
-    >
-  </AttrPair>
-  <AttrPair>
-    <span slot="label">Columns</span>
-    <span slot="content"
-      ><input bind:value={layoutSetting.columns} type="number" /></span
-    >
-  </AttrPair>
-  <AttrPair>
-    <span slot="label">Layers</span>
-    <span slot="content"
-      ><input bind:value={layoutSetting.layerCount} type="number" /></span
-    >
-  </AttrPair>
-
-  <button onclick={createNewLayout}>New Layout</button>
-</div>
+<table>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>
+        <input
+          bind:value={layoutSetting.layoutName}
+          type="text"
+          placeholder="Layout Name"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>Rows</td>
+      <td><input bind:value={layoutSetting.rows} type="number" /></td>
+    </tr>
+    <tr>
+      <td>Columns</td>
+      <td><input bind:value={layoutSetting.columns} type="number" /></td>
+    </tr>
+    <tr>
+      <td>Layers</td>
+      <td><input bind:value={layoutSetting.layerCount} type="number" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><button onclick={createNewLayout}>New Layout</button></td>
+    </tr>
+  </tbody>
+</table>
 
 <style>
-  .flex-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding-top: 10px;
-  }
   input {
-    width: 80%;
+    width: 96%;
+  }
+  button {
+    width: 100%;
   }
 </style>

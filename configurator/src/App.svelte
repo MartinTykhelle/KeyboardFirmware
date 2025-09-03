@@ -18,7 +18,7 @@
 
 <main>
   <div class="container">
-    <div class="sidebar">
+    <div>
       <Sidebar></Sidebar>
     </div>
     {#if !$currentLayoutId}
@@ -34,7 +34,8 @@
     display: flex;
     flex-direction: row;
   }
-  .sidebar {
-    width: 30%;
+  .container div {
+    min-width: 300px;
+    min-height: 500px;
   }
 </style>
