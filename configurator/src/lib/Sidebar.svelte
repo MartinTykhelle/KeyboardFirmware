@@ -144,7 +144,7 @@
             onchange={onWidth}
           >
             {#each widths as width}
-              <option value={width}>{width}</option>
+              <option value={width}>{width}u</option>
             {/each}
           </select>
         </td>
