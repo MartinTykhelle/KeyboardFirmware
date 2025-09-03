@@ -41,15 +41,7 @@
   }
 
   function getLowerKey(key, rowIdx, colIdx) {
-    let returnKey = {
-      key: key.key,
-      code: key.code,
-      keyCode: key.keyCode,
-      usbHidCode: key.usbHidCode,
-      qmk: key.qmk,
-      desc: key.desc,
-      modifier: key.modifier,
-    };
+    let returnKey = {};
     if (typeof key.key == "undefined") {
       for (let index = $currentLayerId - 1; index >= 0; index--) {
         let lowerLevelKey = $currentLayout.layers[index][rowIdx][colIdx];
@@ -70,7 +62,9 @@
         }
       }
     }
-    return returnKey;
+    if (key.usesLower) {
+      key.lowerKey = returnKey;
+    }
   }
   $: refreshLayout({ layer: $currentLayerId, layout: $currentLayoutId });
 
@@ -82,23 +76,35 @@
       //populate lower keys, used for transparent keys
       for (let rowIdx = 0; rowIdx < $currentLayer.length; rowIdx++) {
         for (let colIdx = 0; colIdx < $currentLayer[rowIdx].length; colIdx++) {
-          $currentLayer[rowIdx][colIdx].lowerKey = getLowerKey(
-            $currentLayer[rowIdx][colIdx],
-            rowIdx,
-            colIdx
-          );
+          getLowerKey($currentLayer[rowIdx][colIdx], rowIdx, colIdx);
         }
       }
     }
-    $currentKey = undefined;
+    $currentKey = $currentLayer[$currentRowIdx][$currentColIdx];
   }
   async function deleteKey() {
+    /*
+    
+<!--  Delete should delete both the element in the new array and in the layer-->
+<!-- layer modifiers should also be part of the outside array as they propagate all layers-->
+<!-- hold / tap logic maybe too-->
+
+    */
+    //Iterate all layers and layout and remove [$currentRowIdx][$currentColIdx];
     console.log($currentLayout);
   }
   async function unsetKey() {
-    //$currentKey = { lowerKey: $currentKey.lowerKey };
-    console.log($currentLayout);
-    //await saveLayout($currentLayout.layoutId, $currentLayout);
+    delete $currentKey.key;
+    delete $currentKey.code;
+    delete $currentKey.keyCode;
+    delete $currentKey.usbHidCode;
+    delete $currentKey.qmk;
+    delete $currentKey.desc;
+    delete $currentKey.modifier;
+    delete $currentKey.usesLower;
+
+    await saveLayout($currentLayout.layoutId, $currentLayout);
+    refreshLayout({ layer: $currentLayerId, layout: $currentLayoutId });
   }
 </script>
 
@@ -107,7 +113,7 @@
     <tr>
       <td>Layout</td>
       <td>
-        <select bind:value={$currentLayoutId} onchange={refreshLayout}>
+        <select bind:value={$currentLayoutId}>
           <option value={0} selected> New</option>
           {#each $keyboardLayouts || [] as layout (layout.layoutId)}
             <option value={layout.layoutId}> {layout.layoutName}</option>
@@ -200,20 +206,16 @@
             </select>
           </td>
         </tr>
+        <tr>
+          <td colspan="2"><button onclick={unsetKey}>Unset Key</button></td>
+        </tr>
       {/if}
       <tr>
         <td colspan="2"><button onclick={deleteKey}>Delete Key</button></td>
       </tr>
-      <tr>
-        <td colspan="2"><button onclick={unsetKey}>Unset Key</button></td>
-      </tr>
     {/if}
   </tbody>
 </table>
-
-<!--  Delete should delete both the element in the new array and in the layer-->
-<!-- layer modifiers should also be part of the outside array as they propagate all layers-->
-<!-- hold / tap logic maybe too-->
 
 <style>
   select {
