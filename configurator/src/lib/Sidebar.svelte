@@ -83,15 +83,16 @@
     $currentKey = $currentLayer[$currentRowIdx][$currentColIdx];
   }
   async function deleteKey() {
-    /*
-    
-<!--  Delete should delete both the element in the new array and in the layer-->
-<!-- layer modifiers should also be part of the outside array as they propagate all layers-->
-<!-- hold / tap logic maybe too-->
-
-    */
-    //Iterate all layers and layout and remove [$currentRowIdx][$currentColIdx];
-    console.log($currentLayout);
+    $currentLayout.layout[$currentRowIdx].splice($currentColIdx, 1);
+    for (
+      let layerIdx = 0;
+      layerIdx < $currentLayout.layers.length;
+      layerIdx++
+    ) {
+      $currentLayout.layers[layerIdx][$currentRowIdx].splice($currentColIdx, 1);
+    }
+    await saveLayout($currentLayout.layoutId, $currentLayout);
+    refreshLayout({ layer: $currentLayerId, layout: $currentLayoutId });
   }
   async function unsetKey() {
     delete $currentKey.key;
@@ -106,8 +107,50 @@
     await saveLayout($currentLayout.layoutId, $currentLayout);
     refreshLayout({ layer: $currentLayerId, layout: $currentLayoutId });
   }
+
+  async function generateJSON() {
+    let output = { layers: [] };
+    for (
+      let layerIdx = 0;
+      layerIdx < $currentLayout.layers.length;
+      layerIdx++
+    ) {
+      output.layers[layerIdx] = [];
+      for (
+        let rowIdx = 0;
+        rowIdx < $currentLayout.layers[layerIdx].length;
+        rowIdx++
+      ) {
+        output.layers[layerIdx][rowIdx] = [];
+        for (
+          let colIdx = 0;
+          colIdx < $currentLayout.layers[layerIdx][rowIdx].length;
+          colIdx++
+        ) {
+          output.layers[layerIdx][rowIdx][colIdx] = {
+            hid:
+              $currentLayout.layers[layerIdx][rowIdx][colIdx].usbHidCode ?? "",
+            modifier:
+              $currentLayout.layers[layerIdx][rowIdx][colIdx].modifier ?? "",
+            desc: $currentLayout.layers[layerIdx][rowIdx][colIdx].desc ?? "",
+          };
+        }
+      }
+    }
+    var dataStr =
+      "data:text/json;charset=utf-8," +
+      encodeURIComponent(JSON.stringify(output));
+    var downloadAnchorNode = document.createElement("a");
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "bindings.json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
 </script>
 
+<!-- layer modifiers should also be part of the outside array as they propagate all layers-->
+<!-- hold / tap logic maybe too-->
 <table>
   <tbody>
     <tr>
@@ -212,6 +255,11 @@
       {/if}
       <tr>
         <td colspan="2"><button onclick={deleteKey}>Delete Key</button></td>
+      </tr>
+      <tr>
+        <td colspan="2"
+          ><button onclick={generateJSON}>Generate JSON</button></td
+        >
       </tr>
     {/if}
   </tbody>
