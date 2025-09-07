@@ -108,7 +108,7 @@
     refreshLayout({ layer: $currentLayerId, layout: $currentLayoutId });
   }
 
-  async function generateJSON() {
+  async function downloadJSON() {
     let output = { layers: [] };
     for (
       let layerIdx = 0;
@@ -128,8 +128,9 @@
           colIdx++
         ) {
           output.layers[layerIdx][rowIdx][colIdx] = {
-            hid:
-              $currentLayout.layers[layerIdx][rowIdx][colIdx].usbHidCode ?? "",
+            hid: Number(
+              $currentLayout.layers[layerIdx][rowIdx][colIdx].usbHidCode
+            ),
             modifier:
               $currentLayout.layers[layerIdx][rowIdx][colIdx].modifier ?? "",
             desc: $currentLayout.layers[layerIdx][rowIdx][colIdx].desc ?? "",
@@ -258,7 +259,7 @@
       </tr>
       <tr>
         <td colspan="2"
-          ><button onclick={generateJSON}>Generate JSON</button></td
+          ><button onclick={downloadJSON}>Generate JSON</button></td
         >
       </tr>
     {/if}
