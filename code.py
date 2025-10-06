@@ -4,10 +4,8 @@ import busio
 import digitalio
 import usb_hid
 import json
-from keycode import keyCodes
 from adafruit_mcp230xx.MCP23017 import MCP23017
 from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.keycode import Keycode
 from adafruit_hid.consumer_control import ConsumerControl
 from adafruit_hid.consumer_control_code import ConsumerControlCode
 import storage
@@ -28,7 +26,7 @@ cc = ConsumerControl(usb_hid.devices)
 
 i2c.try_lock()
 #Scan I2c and add devices
-for address in i2c.scan(): 
+for address in i2c.scan():
     found_modules.append(address)
 i2c.unlock()
 
@@ -50,32 +48,48 @@ total_num_columns = num_columns*len(mcp)
 #Set up mapping
 keyMap = []
 
-    
 
-with open('bindings.json', 'r') as file:
-    bindings = json.load(file)["bindings"]
-    
+with open('keyBind.json', 'r') as file:
+    layers = json.load(file)["layers"]
+
 #Fill in map with Nones
-for idr, bindingRows in enumerate(bindings):
-    mapRow = []
-    for idc, bindingCols in enumerate(bindingRows):
-        mapRow.append(None)
-    keyMap.append(mapRow)
+for layerRows in layers:
+    mapLayer = []
+    for rowColumns in range(0,num_rows):
+        mapRow = []
+        for columns in range(0,total_num_columns):
+            mapRow.append([])
+            print(rowColumns,columns)
+        mapLayer.append(mapRow)
+    keyMap.append(mapLayer)
 
-for idr, bindingRows in enumerate(bindings):
 
-    for idc, bindingCols in enumerate(bindingRows):
-        binding = bindings[idr][idc]
-        keyMap[idr][idc] = []
-        
-        
-        if "modifier" in binding:
-            if binding["modifier"] == "C":
-                keyMap[idr][idc].append(keyCodes["LEFT_CONTROL"])
-            if binding["modifier"] == "S":
-                keyMap[idr][idc].append(keyCodes["LEFT_SHIFT"])
 
-        keyMap[idr][idc].append(keyCodes[binding["keyCode"]])
+for idl, bindingLayer in enumerate(layers):
+    for idr, bindingRows in enumerate(bindingLayer):
+        for idc, bindingCols in enumerate(bindingRows):
+            binding = bindingLayer[idr][idc]
+            keyMap[idl][idr][idc] = []
+            print(idr,idc)
+            if "modifier" in binding:
+                if binding["modifier"] == "altGr":
+                    keyMap[idl][idr][idc].append(0xE6)
+                if binding["modifier"] == "alt":
+                    keyMap[idl][idr][idc].append(0xE2)
+                if binding["modifier"] == "ctrl":
+                    keyMap[idl][idr][idc].append(0xE0)
+                if binding["modifier"] == "shift":
+                    keyMap[idl][idr][idc].append(0xE1)
+
+
+            if "layer" in binding:
+                keyMap[idl][idr][idc].append(0x10000+binding["layer"])
+            elif "hid" in binding:
+                keyMap[idl][idr][idc].append(binding["hid"])
+
+
+
+print(keyMap)
 
 
 cols = [0]*len(row_masks)
@@ -98,7 +112,15 @@ rotaryButton.pull = digitalio.Pull.UP
 volume = [0,0,0,0,0]
 rotaryButtonState = rotaryButton.value
 
+layerMod = [False,False,False,False]
+
 while True:
+    layer = 0
+    for idl in range(len(layerMod)):
+        if layerMod[idl]:
+            layer = layer + 2**idl;
+    print(layer)
+
     for idr, row in enumerate(row_masks):
         col = 0
         for idm, module in enumerate(mcp):
@@ -108,41 +130,49 @@ while True:
         cols[idr] = col
 
     #Do bitwise magic on read state, needs to be fast
+
     pressed_buttons = []
     released_buttons = []
+
     for idr in range(len(cols)):
         state = cols[idr]
         prev_state = prevCols[idr]
-        
+
         #Checks if a button has been pressed on released
         pressed =  (state ^ prev_state)&~state
         released = (state ^ prev_state)&state
         #print(pressed)
-        
-        #Not sure how this can be improved
+
         if initialized:
             for pos in range(8*len(mcp)):
                 if pressed & (1<<pos) > 0:
-                    for key in keyMap[idr][pos]:
-                        pressed_buttons.append(key)
+                    for key in keyMap[layer][idr][pos]:
+                        if key is not None and key > 0x10000:
+                            layerMod[key-0x10001] = True
+                        elif not key is None:
+                            pressed_buttons.append(key)
                 if released & (1 << pos) > 0:
-                    for key in keyMap[idr][pos]:
-                        released_buttons.append(key)
-                
+                    for key in keyMap[layer][idr][pos]:
+                        if key is not None and key > 0x10000:
+                            layerMod[key-0x10001] = False
+                            kbd.release_all()
+                        elif not key is None:
+                            released_buttons.append(key)
+
         prevCols[idr] = cols[idr]
-        
+
     initialized = True
     #print(pressed_buttons, released_buttons)
-    
+
     #time.sleep(1)
     #print(specialBoot)
     #print(rotaryA.value, rotaryB.value)
     volChange = 0
     if rotaryA.value and not rotaryB.value:
-        volChange = -1 
+        volChange = -1
     if not rotaryA.value and rotaryB.value:
         volChange = 1
-    
+
     volume.pop(0)
     volume.append(volChange)
     #print(volume)
@@ -158,6 +188,7 @@ while True:
         volume = [0,0,0,0,0]
     if rotaryButtonState != rotaryButton.value and not rotaryButton.value:
         cc.press(ConsumerControlCode.PLAY_PAUSE)
+
     rotaryButtonState = rotaryButton.value
     kbd.press(*pressed_buttons)
     kbd.release(*released_buttons)

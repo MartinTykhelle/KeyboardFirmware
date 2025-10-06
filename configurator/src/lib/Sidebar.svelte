@@ -37,13 +37,15 @@
     $currentKey.usbHidCode = $conversion[convIdx].usbHidCode;
     $currentKey.qmk = $conversion[convIdx].qmk;
     $currentKey.desc = $conversion[convIdx].desc;
+    $currentKey.layerChange = $conversion[convIdx].layer;
     await saveLayout($currentLayout.layoutId, $currentLayout);
   }
 
-  function getLowerKey(key, rowIdx, colIdx) {
+  function getLowerKey(key, rowIdx, colIdx, startLayer) {
     let returnKey = {};
+    startLayer = startLayer ?? $currentLayerId;
     if (typeof key.key == "undefined") {
-      for (let index = $currentLayerId - 1; index >= 0; index--) {
+      for (let index = startLayer - 1; index >= 0; index--) {
         let lowerLevelKey = $currentLayout.layers[index][rowIdx][colIdx];
         console.log(index, $currentLayout.layers[index][rowIdx][colIdx]);
         if (lowerLevelKey.key) {
@@ -103,6 +105,7 @@
     delete $currentKey.desc;
     delete $currentKey.modifier;
     delete $currentKey.usesLower;
+    delete $currentKey.layerChange;
 
     await saveLayout($currentLayout.layoutId, $currentLayout);
     refreshLayout({ layer: $currentLayerId, layout: $currentLayoutId });
@@ -127,13 +130,18 @@
           colIdx < $currentLayout.layers[layerIdx][rowIdx].length;
           colIdx++
         ) {
+          let key = $currentLayout.layers[layerIdx][rowIdx][colIdx];
+          if (key.usesLower) {
+            let layerChange = key.layerChange;
+            key = key.lowerKey;
+            key.layerChange = layerChange;
+          }
+
           output.layers[layerIdx][rowIdx][colIdx] = {
-            hid: Number(
-              $currentLayout.layers[layerIdx][rowIdx][colIdx].usbHidCode
-            ),
-            modifier:
-              $currentLayout.layers[layerIdx][rowIdx][colIdx].modifier ?? "",
-            desc: $currentLayout.layers[layerIdx][rowIdx][colIdx].desc ?? "",
+            layer: key.layerChange,
+            hid: Number(key.usbHidCode),
+            modifier: key.modifier ?? "",
+            desc: key.desc ?? "",
           };
         }
       }

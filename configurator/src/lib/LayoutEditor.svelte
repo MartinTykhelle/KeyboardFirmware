@@ -49,6 +49,7 @@
       $currentKey.desc = foundKey[0].desc;
       $currentKey.modifier = modifier;
       $currentKey.usesLower = false;
+      $currentKey.layerChange = foundKey[0].layer;
       await saveLayout($currentLayout.layoutId, $currentLayout);
     }
   }
